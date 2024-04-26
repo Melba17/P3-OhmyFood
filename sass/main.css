@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*****Appel des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
+/** Fonts du site **/
+/** Font-size **/
+/** Charte des Couleurs pour l'ensemble du site **/
+/****** Paramètres généraux en Mobile First ***********/
+/* Réinitialisation des marges navigateurs */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/** Mise en forme de diverses balises html **/
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #353535;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/** LOGO **/
+.flex {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  height: 3.938rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.flex .logo {
+  width: 10rem;
+  height: 2.25rem;
+  margin-top: 1.125rem;
+}
+
+/** Bannière de Localisation **/
+.bckg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  gap: 1.2rem;
+  width: 100%;
+  height: 3.125rem;
+  background-color: #eaeaea;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}/*# sourceMappingURL=main.css.map */

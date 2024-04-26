@@ -1,0 +1,28 @@
+/** Fonts du site **/
+$text-font: "Roboto", sans-serif;
+$title-font: "Shrikhand", cursive;
+
+/** Font-size **/
+$base: 1rem;
+
+/** Charte des Couleurs pour l'ensemble du site **/
+$purple-color: #9356dc;
+$light-purple-color: lighten($purple-color, 5%);
+$pink-color: #ff79da;
+$light-pink-color: lighten($pink-color, 5%);
+$green-color: #99e2d0;
+$white-color: #ffffff;
+$darkgreen-color: #008766;
+$lightblue-color: #89c8fa;
+$darkblue-color: #003a68;
+$black-color: #000000;
+$black2-color: #101010;
+$lightgrey-color: #eaeaea;
+$mediumgrey-color: #7e7e7e;
+$darkgrey-color: #353535;
+$gradient: linear-gradient(to bottom, $pink-color, $purple-color 80%);
+$light-gradient: linear-gradient(
+  to bottom,
+  $light-pink-color,
+  $light-purple-color 80%
+);
