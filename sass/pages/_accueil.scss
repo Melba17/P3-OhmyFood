@@ -1,0 +1,57 @@
+/** Bannière de Localisation **/
+.location {
+  @include flexcenter;
+  @include strongshadow;
+  position: absolute;
+  z-index: 1;
+  gap: 1.20rem;
+  width: 100%;
+  height: 3.125rem;
+  background-color: $lightgrey-color;
+}
+
+/** Présentation courte de la start up**/
+.presentation {
+  background-color: $cleargrey-color;
+  padding-top: 3.125rem;
+  padding-bottom: 3.8rem;
+  text-align: center;
+  
+  &__one {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    padding: 2.5rem 2.813rem 1rem;
+  }
+  &__two {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: $darkgrey-color;
+    line-height: 1.313rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/** Section Fonctionnement **/
+.fct {
+  padding: 3.25rem 1.25rem 3rem;
+}
+.fct__one {
+    @include flexcenter;
+    margin-left: 1.25rem;
+    background: $purple-color;
+    color: $white-color;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;  
+}
+    
+.btn {
+    @include flexcenter;
+    @include extendshadow;
+    gap: 0.938rem;
+    background: $cleargrey-color;
+    width: 80%;
+    height: 4.5rem;
+    border-radius: 1rem;
+}

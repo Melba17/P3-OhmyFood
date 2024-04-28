@@ -1,0 +1,15 @@
+/** LOGO **/
+.header {
+  @include flexcenter;
+  @include lightshadow;
+  position: relative;
+  z-index: 2;
+  height: 3.938rem;
+ 
+  .logo {
+    width: 10rem;
+    height: 2.25rem;
+    margin-top: 0.8rem;
+  }
+}
+

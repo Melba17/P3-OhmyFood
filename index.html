@@ -12,24 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- Ajout du style css de référence -->
     <link rel="stylesheet" href="sass/main.css" />
   </head>
-  <body class="main-container">
+  <body>
     <header>
       <!-- ENTÊTE -->
-      <div class="flex">
+      <div class="header">
         <img
           src="Images/logo/ohmyfood@2x.svg"
           alt="Logo du site Oh my Food"
@@ -39,10 +38,30 @@
     </header>
     <main>
       <!-- LOCALISATION -->
-      <div class="bckg">
+      <div class="location">
         <i class="fa-solid fa-location-dot" style="color: #353535"></i>
         <a href="#">Paris, Belleville</a>
       </div>
+      <div class="presentation">
+        <p class="presentation__one">Réservez le menu qui vous convient</p>
+        <p class="presentation__two">
+          Découvrez des restaurants d’exception, sélectionnés par nos soins.
+        </p>
+        <a href="#" class="cta">Explorer nos restaurants</a>
+      </div>
+      <section>
+        <h1 class="fct">Fonctionnement</h1>
+        <div>
+          <span class="fct__one">1</span
+          ><a href="#" class="btn"
+            ><i
+              class="fa-solid fa-mobile-screen-button fa-lg"
+              style="color: #7e7e7e"
+            ></i
+            >Choisissez un restaurant</a
+          >
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>

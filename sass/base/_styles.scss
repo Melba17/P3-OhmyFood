@@ -1,17 +1,17 @@
 /****** Paramètres généraux en Mobile First ***********/
 
-/* Réinitialisation des marges navigateurs */
-* {
-  margin: 0;
-  padding: 0;
-}
 /** Mise en forme de diverses balises html **/
 body {
   font-family: $text-font;
   font-size: $base;
 }
-
 h1 {
+  font-family: $text-font;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
   font-family: $title-font;
   font-size: 1.75rem;
   font-weight: 400;

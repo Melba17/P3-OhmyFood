@@ -1,0 +1,16 @@
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin extendshadow {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+@mixin strongshadow {
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+@mixin lightshadow {
+    box-shadow: 0px 2px 4px 0px #00000026;
+}

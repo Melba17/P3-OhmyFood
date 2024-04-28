@@ -1,0 +1,11 @@
+.cta {
+    @include flexcenter;
+    @include strongshadow;
+    background: $gradient;
+    color: $white-color;
+    margin: auto;
+    height: 3.125rem;
+    width: 60%;
+    border-radius: 30px;
+    
+}

@@ -1,15 +1,18 @@
 @charset "UTF-8";
 /*****Appel des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
-/** Fonts du site **/
-/** Font-size **/
-/** Charte des Couleurs pour l'ensemble du site **/
-/****** Paramètres généraux en Mobile First ***********/
 /* Réinitialisation des marges navigateurs */
 * {
   margin: 0;
   padding: 0;
 }
 
+/** Fonts du site **/
+/** Font-size **/
+/** Charte des Couleurs pour l'ensemble du site **/
+/**Couleurs principales**/
+/**Autres Couleurs **/
+/** Couleurs de CTA **/
+/****** Paramètres généraux en Mobile First ***********/
 /** Mise en forme de diverses balises html **/
 body {
   font-family: "Roboto", sans-serif;
@@ -17,7 +20,13 @@ body {
 }
 
 h1 {
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Shrikhand", serif;
   font-size: 1.75rem;
   font-weight: 400;
 }
@@ -30,30 +39,94 @@ a {
 }
 
 /** LOGO **/
-.flex {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  height: 3.938rem;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
-}
-.flex .logo {
-  width: 10rem;
-  height: 2.25rem;
-  margin-top: 1.125rem;
-}
-
-/** Bannière de Localisation **/
-.bckg {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  position: relative;
+  z-index: 2;
+  height: 3.938rem;
+}
+.header .logo {
+  width: 10rem;
+  height: 2.25rem;
+  margin-top: 0.8rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  background: linear-gradient(to bottom, #ff79da, #9356dc 97%);
+  color: #ffffff;
+  margin: auto;
+  height: 3.125rem;
+  width: 60%;
+  border-radius: 30px;
+}
+
+/** Bannière de Localisation **/
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   gap: 1.2rem;
   width: 100%;
   height: 3.125rem;
   background-color: #eaeaea;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+/** Présentation courte de la start up**/
+.presentation {
+  background-color: #F6F6F6;
+  padding-top: 3.125rem;
+  padding-bottom: 3.8rem;
+  text-align: center;
+}
+.presentation__one {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  padding: 2.5rem 2.813rem 1rem;
+}
+.presentation__two {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #353535;
+  line-height: 1.313rem;
+  margin-bottom: 2rem;
+}
+
+/** Section Fonctionnement **/
+.fct {
+  padding: 3.25rem 1.25rem 3rem;
+}
+
+.fct__one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.25rem;
+  background: #9356dc;
+  color: #ffffff;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  gap: 0.938rem;
+  background: #F6F6F6;
+  width: 80%;
+  height: 4.5rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=main.css.map */
