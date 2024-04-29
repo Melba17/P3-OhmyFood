@@ -33,25 +33,48 @@
 }
 
 /** Section Fonctionnement **/
-.fct {
-  padding: 3.25rem 1.25rem 3rem;
-}
-.fct__one {
-    @include flexcenter;
-    margin-left: 1.25rem;
-    background: $purple-color;
-    color: $white-color;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 1rem;  
-}
+.direction {
+  @include vertical;
+  margin-bottom: 4rem;
+
+  .fct {
+    padding: 3.25rem 1.25rem 0.5rem;
+  }
+
+  .choice {
+  @include align;
+  
+    &__order {
+      @include flexcenter;
+      margin-left: 1.25rem;
+      background: $purple-color;
+      color: $white-color;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 1rem;
+      margin-right: -0.7rem;
+      z-index: 1;
+    }
     
-.btn {
-    @include flexcenter;
-    @include extendshadow;
-    gap: 0.938rem;
-    background: $cleargrey-color;
-    width: 80%;
-    height: 4.5rem;
-    border-radius: 1rem;
+    .btn {
+      @include extendshadow;
+      @include flex;
+      gap: 1.5rem;
+      background: $cleargrey-color;
+      color: $black-color;
+      width: 70%;
+      padding: 1.8rem;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      
+      i {
+        color: $mediumgrey-color;
+      }
+
+      &:hover i,
+      &:active i {
+        color: $purple-color; 
+      }
+    }
+  }
 }

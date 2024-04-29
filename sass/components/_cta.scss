@@ -7,5 +7,12 @@
     height: 3.125rem;
     width: 60%;
     border-radius: 30px;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        background: $light-gradient;
+        @include extrashadow;
+    }
     
 }
