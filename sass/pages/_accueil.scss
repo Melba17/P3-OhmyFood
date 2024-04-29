@@ -36,11 +36,10 @@
 .direction {
   @include vertical;
   margin-bottom: 4rem;
-
+  
   .fct {
     padding: 3.25rem 1.25rem 0.5rem;
   }
-
   .choice {
   @include align;
   
@@ -77,4 +76,12 @@
       }
     }
   }
+}
+
+ /** Paramètres section Restaurants**/
+
+.bckg {
+  background-color: $cleargrey-color;
+  @include vertical;
+  padding: 3.25rem 1.25rem;
 }

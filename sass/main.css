@@ -12,7 +12,9 @@
 /**Couleurs principales**/
 /**Autres Couleurs **/
 /** Couleurs de CTA **/
-/** Positionnements **/
+/** Positionnements généraux**/
+/** Accueil - Fonctionnement **/
+/** Accueil - Restaurants **/
 /** Ombres Portées **/
 /****** Paramètres généraux en Mobile First ***********/
 /** Mise en forme de diverses balises html **/
@@ -21,12 +23,19 @@ body {
   font-size: 1rem;
 }
 
+/** Titre Page Accueil**/
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
+h3 {
+  font-size: 1.125;
+  font-weight: 700;
+}
+
+/** Titre Page Restos**/
 h2 {
   font-family: "Shrikhand", serif;
   font-size: 1.75rem;
@@ -72,6 +81,53 @@ a {
 .cta:hover, .cta:active {
   background: linear-gradient(to bottom, #ff93e1, #a16be0 97%);
   box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.vertical .width {
+  width: 100%;
+}
+.vertical .width .card {
+  background: #ffffff;
+  border-radius: 1rem;
+}
+.vertical .width .card__img {
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 170px;
+  border-radius: 1rem 1rem 0 0;
+}
+.vertical .width .card__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.125rem;
+  width: 5rem;
+  height: 1.813rem;
+  background: #99e2d0;
+  color: #008766;
+  font-size: 0.875rem;
+  font-weight: 500;
+  position: absolute;
+  z-index: 2;
+  margin: 1rem 15rem;
+}
+.vertical .width .card__txt {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  line-height: 1.6rem;
+  color: #000000;
+  font-size: 1.063rem;
+  font-weight: 300;
 }
 
 /** Bannière de Localisation **/
@@ -153,4 +209,13 @@ a {
 }
 .direction .choice .btn:hover i, .direction .choice .btn:active i {
   color: #9356dc;
+}
+
+/** Paramètres section Restaurants**/
+.bckg {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3.25rem 1.25rem;
 }/*# sourceMappingURL=main.css.map */

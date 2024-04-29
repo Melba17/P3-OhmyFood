@@ -1,5 +1,5 @@
 
-/** Positionnements **/
+/** Positionnements généraux**/
 @mixin flexcenter {
     display: flex;
     justify-content: center;
@@ -9,6 +9,10 @@
     display: flex;
     align-items: center;
 }
+
+
+/** Accueil - Fonctionnement **/
+
 @mixin flex {
     display: flex;
     align-items: baseline;
@@ -18,6 +22,19 @@
     flex-direction: column;
     gap: 1.5rem;
 }
+
+/** Accueil - Restaurants **/
+@mixin cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /** Ombres Portées **/
 @mixin lightshadow {
