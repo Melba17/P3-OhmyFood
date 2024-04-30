@@ -6,29 +6,25 @@ body {
   font-size: $base;
 }
 
-/** Titre Page Accueil**/
 h1 {
   font-family: $text-font;
   font-size: 1.5rem;
   font-weight: 700;
 }
-h3 {
-  font-size: 1.125;
-  font-weight: 700;
-}
 
-/** Titre Page Restos**/
 h2 {
   font-family: $title-font;
   font-size: 1.75rem;
   font-weight: 400;
 }
 
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 a {
   text-decoration: none;
-  color: $darkgrey-color;
-  font-size: $base;
-  font-weight: 500;
 }
 
 

@@ -1,24 +1,36 @@
+/** Section Restaurants **/
 .vertical {
     @include cards;
+
+    /** style pour la balise <a> qui enveloppe la carte**/
     .width {
         width: 100%;
-        
+
+        /** style pour la carte**/
         .card {
                 background: $white-color;
                 border-radius: 1rem;
 
+                .container__one {
+                    @include img;
+                }
+                
                 &__img {
                         position: relative;
                         z-index: 1;
                         object-fit: cover;
                         object-position: center;
                         width: 100%;
-                        height: 170px;
+                        height: 160px;
                         border-radius: 1rem 1rem 0 0;
+                        
                 }
-
+                /** style pour l'étiquette **/
                 &__label {
                     @include flexcenter;
+                    /** Superposition de l'étiquette "Nouveau" par rapport à l'image **/
+                    position: absolute;
+                    z-index: 2;
                     border-radius: 0.125rem;
                     width: 5rem;
                     height: 1.813rem;
@@ -26,20 +38,28 @@
                     color: $darkgreen-color;
                     font-size: 0.875rem;
                     font-weight: 500;
-                    position: absolute;
-                    z-index: 2;
-                    margin: 1rem 15rem;
+                    margin-top: 4%;
+                    margin-right: 4%;
                 }
 
-                &__txt {
-                    @include column;
-                    padding: 0.8rem;
-                    line-height: 1.6rem;
-                    color: $black-color;
-                    font-size: 1.063rem;
-                    font-weight: 300;
+            /** style pour le texte**/
+                .container__two {
+                    @include align__heart;
                 }
+
+                        &__txt {
+                            @include column;
+                            line-height: 1.6rem;
+                            color: $black-color;
+                            font-size: 1.063rem;
+                            font-weight: 300;
+                        }
+
+                        &__heart {
+                            @include position;
+                            color: $black-color;
+                        }   
         }
-
+        
     }  
 }

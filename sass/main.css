@@ -14,7 +14,10 @@
 /** Couleurs de CTA **/
 /** Positionnements généraux**/
 /** Accueil - Fonctionnement **/
-/** Accueil - Restaurants **/
+/** Accueil - Cartes Restaurants **/
+/** Partie haute de la carte **/
+/** Partie basse de la carte **/
+/** FOOTER **/
 /** Ombres Portées **/
 /****** Paramètres généraux en Mobile First ***********/
 /** Mise en forme de diverses balises html **/
@@ -23,30 +26,25 @@ body {
   font-size: 1rem;
 }
 
-/** Titre Page Accueil**/
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-h3 {
-  font-size: 1.125;
-  font-weight: 700;
-}
-
-/** Titre Page Restos**/
 h2 {
   font-family: "Shrikhand", serif;
   font-size: 1.75rem;
   font-weight: 400;
 }
 
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 a {
   text-decoration: none;
-  color: #353535;
-  font-size: 1rem;
-  font-weight: 500;
 }
 
 /** LOGO **/
@@ -63,6 +61,36 @@ a {
   width: 10rem;
   height: 2.25rem;
   margin-top: 0.8rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 7%;
+  padding-left: 7%;
+  padding-bottom: 5%;
+  background-color: #353535;
+}
+.footer__width {
+  width: 90%;
+}
+.footer .shrinkhand {
+  font-family: "Shrikhand", serif;
+  font-size: 1.125rem;
+}
+.footer .color {
+  color: #ffffff;
+}
+.footer .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.7rem;
+  margin-top: 1rem;
+}
+.footer .icon {
+  display: flex;
+  gap: 0.7rem;
 }
 
 .cta {
@@ -83,18 +111,27 @@ a {
   box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
+/** Section Restaurants **/
 .vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  /** style pour la balise <a> qui enveloppe la carte**/
 }
 .vertical .width {
   width: 100%;
+  /** style pour la carte**/
 }
 .vertical .width .card {
   background: #ffffff;
   border-radius: 1rem;
+  /** style pour l'étiquette **/
+  /** style pour le texte**/
+}
+.vertical .width .card .container__one {
+  display: flex;
+  justify-content: flex-end;
 }
 .vertical .width .card__img {
   position: relative;
@@ -102,13 +139,16 @@ a {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 170px;
+  height: 160px;
   border-radius: 1rem 1rem 0 0;
 }
 .vertical .width .card__label {
   display: flex;
   justify-content: center;
   align-items: center;
+  /** Superposition de l'étiquette "Nouveau" par rapport à l'image **/
+  position: absolute;
+  z-index: 2;
   border-radius: 0.125rem;
   width: 5rem;
   height: 1.813rem;
@@ -116,18 +156,28 @@ a {
   color: #008766;
   font-size: 0.875rem;
   font-weight: 500;
-  position: absolute;
-  z-index: 2;
-  margin: 1rem 15rem;
+  margin-top: 4%;
+  margin-right: 4%;
+}
+.vertical .width .card .container__two {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
 }
 .vertical .width .card__txt {
   display: flex;
   flex-direction: column;
-  padding: 0.8rem;
+  align-items: flex-start;
   line-height: 1.6rem;
   color: #000000;
   font-size: 1.063rem;
   font-weight: 300;
+}
+.vertical .width .card__heart {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.6rem;
+  color: #000000;
 }
 
 /** Bannière de Localisation **/
@@ -142,6 +192,10 @@ a {
   width: 100%;
   height: 3.125rem;
   background-color: #eaeaea;
+}
+.location .paris {
+  color: #353535;
+  font-weight: 500;
 }
 
 /** Présentation courte de la start up**/
@@ -199,7 +253,10 @@ a {
   gap: 1.5rem;
   background: #F6F6F6;
   color: #000000;
-  width: 70%;
+  color: #353535;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 69%;
   padding: 1.8rem;
   border-radius: 1.5rem;
   cursor: pointer;
@@ -217,5 +274,5 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 3.25rem 1.25rem;
+  padding: 3.25rem 1.25rem 4.5rem 1.25rem;
 }/*# sourceMappingURL=main.css.map */

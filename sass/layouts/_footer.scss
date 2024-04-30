@@ -1,0 +1,26 @@
+.footer {
+    @include footer;
+    background-color: $darkgrey-color;
+    &__width {
+        width: 90%;
+    }
+
+    & .shrinkhand {
+        font-family: $title-font;
+        font-size: 1.125rem;
+    }
+    & .color {
+        color: $white-color;
+    }
+
+    & .nav {
+       @include column;
+       line-height: 1.7rem;
+       margin-top: 1rem;     
+    }
+
+    .icon {
+        @include space;
+    }
+
+}
