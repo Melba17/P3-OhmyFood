@@ -1,0 +1,17 @@
+/** Taille Photo**/
+.restos {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+/** Fond global **/
+
+.bckg__restos {
+    position: relative;
+    background-color: $cleargrey-color;
+    border-radius: 1.9rem 1.9rem 0 0;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    margin-top: -3rem;
+}

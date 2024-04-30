@@ -12,7 +12,7 @@
 /**Couleurs principales**/
 /**Autres Couleurs **/
 /** Couleurs de CTA **/
-/** Positionnements généraux**/
+/** Positionnements généraux et Entêtes**/
 /** Accueil - Fonctionnement **/
 /** Accueil - Cartes Restaurants **/
 /** Partie haute de la carte **/
@@ -47,7 +47,7 @@ a {
   text-decoration: none;
 }
 
-/** LOGO **/
+/** LOGO page accueil**/
 .header {
   display: flex;
   justify-content: center;
@@ -58,6 +58,21 @@ a {
   height: 3.938rem;
 }
 .header .logo {
+  width: 10rem;
+  height: 2.25rem;
+  margin-top: 0.8rem;
+}
+
+/** LOGO pages restos**/
+.header__restos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1.5rem;
+  gap: 19%;
+  height: 3.938rem;
+}
+.header__restos .logo {
   width: 10rem;
   height: 2.25rem;
   margin-top: 0.8rem;
@@ -275,4 +290,21 @@ a {
   flex-direction: column;
   gap: 1.5rem;
   padding: 3.25rem 1.25rem 4.5rem 1.25rem;
+}
+
+/** Taille Photo**/
+.restos {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+/** Fond global **/
+.bckg__restos {
+  position: relative;
+  background-color: #F6F6F6;
+  border-radius: 1.9rem 1.9rem 0 0;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  margin-top: -3rem;
 }/*# sourceMappingURL=main.css.map */

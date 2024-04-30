@@ -1,4 +1,4 @@
-/** LOGO **/
+/** LOGO page accueil**/
 .header {
   @include flexcenter;
   @include lightshadow;
@@ -13,3 +13,15 @@
   }
 }
 
+/** LOGO pages restos**/
+
+.header__restos {
+  @include arrow;
+  height: 3.938rem;
+ 
+  .logo {
+    width: 10rem;
+    height: 2.25rem;
+    margin-top: 0.8rem;
+  }
+}
