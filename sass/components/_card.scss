@@ -16,10 +16,9 @@
                 }
                 
                 &__img {
+                        @include photos;
                         position: relative;
                         z-index: 1;
-                        object-fit: cover;
-                        object-position: center;
                         width: 100%;
                         height: 160px;
                         border-radius: 1rem 1rem 0 0;
