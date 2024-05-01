@@ -1,10 +1,16 @@
 
-/** Paramètres généraux et Entêtes**/
+/** Paramètres généraux **/
 @mixin flexcenter {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 @mixin flexcolumn {
     display: flex;
     flex-direction: column;
@@ -19,9 +25,12 @@
     justify-content: flex-start;
     align-items: center;
     margin-left: 1.5rem; 
-    gap: 20%;
-}
+    gap: 19%;
 
+    @media screen and (min-width: 768px) {
+        gap: 41%;
+    }
+}
 @mixin photos {
     object-fit: cover;
     object-position: center;

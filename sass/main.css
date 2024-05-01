@@ -12,7 +12,7 @@
 /**Couleurs principales**/
 /**Autres Couleurs **/
 /** Couleurs de CTA **/
-/** Paramètres généraux et Entêtes**/
+/** Paramètres généraux **/
 /** Accueil - Fonctionnement **/
 /** Accueil - Cartes Restaurants **/
 /** Partie haute de la card **/
@@ -61,11 +61,22 @@ a {
   position: relative;
   z-index: 2;
   height: 3.938rem;
+  /**** Media Queries ****/
 }
 .header .logo {
-  width: 10rem;
-  height: 2.25rem;
+  width: 10.125rem;
+  height: 2.75rem;
   margin-top: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .header .header {
+    height: 6rem;
+  }
+  .header .logo {
+    width: 12.5rem;
+    height: 2.138rem;
+    margin-top: 0;
+  }
 }
 
 /** LOGO pages restos**/
@@ -74,13 +85,29 @@ a {
   justify-content: flex-start;
   align-items: center;
   margin-left: 1.5rem;
-  gap: 20%;
+  gap: 19%;
   height: 3.938rem;
+  /**** Media Queries ****/
+}
+@media screen and (min-width: 768px) {
+  .header__restos {
+    gap: 41%;
+  }
 }
 .header__restos .logo {
-  width: 10rem;
-  height: 2.25rem;
+  width: 10.125rem;
+  height: 2.75rem;
   margin-top: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .header__restos .header {
+    height: 6rem;
+  }
+  .header__restos .logo {
+    width: 12.5rem;
+    height: 2.138rem;
+    margin-top: 0;
+  }
 }
 
 .footer {
@@ -126,10 +153,16 @@ a {
   width: 60%;
   border-radius: 30px;
   cursor: pointer;
+  /**** Media Queries ****/
 }
 .cta:hover, .cta:active {
   background: linear-gradient(to bottom, #ff93e1, #a16be0 97%);
   box-shadow: 0px 7px 7px 2px rgba(0, 0, 0, 0.2509803922);
+}
+@media screen and (min-width: 768px) {
+  .cta {
+    width: 15%;
+  }
 }
 
 /** Section Restaurants **/
@@ -239,6 +272,18 @@ a {
   line-height: 1.313rem;
   margin-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .presentation {
+    padding-bottom: 2rem;
+  }
+  .presentation__one {
+    font-size: 2.5rem;
+    padding: 2.5rem 2.813rem 2.2rem;
+  }
+  .presentation__two {
+    margin-bottom: 1.5rem;
+  }
+}
 
 /** Section Fonctionnement **/
 .direction {
@@ -277,7 +322,7 @@ a {
   font-size: 1rem;
   font-weight: 500;
   width: 69%;
-  padding: 1.8rem;
+  padding: 1.7rem;
   border-radius: 1.5rem;
   cursor: pointer;
 }
@@ -312,7 +357,7 @@ a {
   background-color: #F6F6F6;
   border-radius: 1.9rem 1.9rem 0 0;
   padding-top: 2rem;
-  padding-left: 0.8rem;
+  padding-left: 1rem;
   padding-right: 0.6rem;
   margin-top: -3rem;
 }
@@ -346,10 +391,8 @@ a {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   background: #ffffff;
   color: #000000;
-  font-size: 1.125rem;
-  font-weight: 500;
   width: 90%;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 1rem;
   line-height: 1.5rem;
 }

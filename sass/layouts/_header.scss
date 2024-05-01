@@ -7,10 +7,24 @@
   height: 3.938rem;
  
   .logo {
-    width: 10rem;
-    height: 2.25rem;
+    width: 10.125rem;
+    height: 2.75rem;
     margin-top: 0.8rem;
   }
+  
+    /**** Media Queries ****/
+    @media screen and (min-width: 768px) {
+      .header {
+        height: 6rem;
+      }
+
+      .logo {
+        width: 12.5rem;
+        height: 2.138rem;
+        margin-top: 0;
+      }
+    }
+
 }
 
 /** LOGO pages restos**/
@@ -20,8 +34,21 @@
   height: 3.938rem;
  
   .logo {
-    width: 10rem;
-    height: 2.25rem;
+    width: 10.125rem;
+    height: 2.75rem;
     margin-top: 0.8rem;
+  }
+
+  /**** Media Queries ****/
+  @media screen and (min-width: 768px) {
+    .header {
+      height: 6rem;
+    }
+
+    .logo {
+      width: 12.5rem;
+      height: 2.138rem;
+      margin-top: 0;
+    }
   }
 }

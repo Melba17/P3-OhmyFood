@@ -35,13 +35,26 @@
     line-height: 1.313rem;
     margin-bottom: 2rem;
   }
-}
 
+  @media screen and (min-width: 768px) {
+      padding-bottom: 2rem;
+
+      &__one {
+      font-size: 2.5rem;
+      padding: 2.5rem 2.813rem 2.2rem;
+      }
+
+      &__two {
+      margin-bottom: 1.5rem;
+      }
+    }
+  
+}
 /** Section Fonctionnement **/
 .direction {
   @include vertical;
   margin-bottom: 4rem;
-  
+
   .fct {
     padding: 3.25rem 1.25rem 0.5rem;
   }
@@ -69,9 +82,10 @@
       font-size: $base;
       font-weight: 500;
       width: 69%;
-      padding: 1.8rem;
+      padding: 1.7rem;
       border-radius: 1.5rem;
       cursor: pointer;
+    
       
       i {
         color: $mediumgrey-color;
