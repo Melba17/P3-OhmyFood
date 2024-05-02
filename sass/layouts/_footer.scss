@@ -1,7 +1,10 @@
 .footer {
-    @include footer;
     background-color: $darkgrey-color;
+
     &__width {
+        padding-top: 7%;
+        padding-left: 7%;
+        padding-bottom: 5%;
         width: 90%;
     }
 
@@ -13,8 +16,16 @@
         color: $white-color;
     }
 
+    & .weight__one {
+        font-weight: 500;
+    }
+
+    & .weight__two {
+        font-weight: 400;
+    }
+
     & .nav {
-       @include column;
+       @include footer__two;
        line-height: 1.7rem;
        margin-top: 1rem;     
     }

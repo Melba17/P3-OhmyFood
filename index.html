@@ -28,7 +28,7 @@
   <body>
     <header>
       <!-- ENTÊTE -->
-      <div class="header">
+      <div class="header header__accueil">
         <img
           src="Images/logo/ohmyfood@2x.svg"
           alt="Logo du site Oh my Food"
@@ -53,36 +53,41 @@
         </p>
         <a href="#restos" class="cta">Explorer nos restaurants</a>
       </div>
-      <section class="direction">
-        <h1 class="fct">Fonctionnement</h1>
-        <div class="choice">
-          <span class="choice__order">1</span
-          ><a href="#restos" class="btn"
-            ><i
-              class="fa-solid fa-mobile-screen-button fa-lg"
-              aria-hidden="true"
-            ></i
-            >Choisissez un restaurant</a
-          >
+      <section>
+        <div class="fct__title">
+          <h1>Fonctionnement</h1>
         </div>
-        <div class="choice">
-          <span class="choice__order">2</span
-          ><a href="#restos" class="btn"
-            ><i class="fa-solid fa-list-ul fa-lg" aria-hidden="true"></i
-            >Composez votre menu</a
-          >
-        </div>
-        <div class="choice">
-          <span class="choice__order">3</span
-          ><a href="#restos" class="btn"
-            ><i class="fa-solid fa-store fa-lg" aria-hidden="true"></i>Dégustez
-            au restaurant</a
-          >
-        </div>
+          <div class="direction">
+            <div class="choice">
+              <span class="choice__order">1</span
+              ><a href="#restos" class="btn"
+                ><i
+                  class="fa-solid fa-mobile-screen-button fa-lg"
+                  aria-hidden="true"
+                ></i
+                >Choisissez un restaurant</a
+              >
+            </div>
+            <div class="choice">
+              <span class="choice__order">2</span
+              ><a href="#restos" class="btn"
+                ><i class="fa-solid fa-list-ul fa-lg" aria-hidden="true"></i
+                >Composez votre menu</a
+              >
+            </div>
+            <div class="choice">
+              <span class="choice__order">3</span
+              ><a href="#restos" class="btn"
+                ><i class="fa-solid fa-store fa-lg" aria-hidden="true"></i
+                >Dégustez au restaurant</a
+              >
+            </div>
       </section>
       <section class="bckg" id="restos">
+        <div class="rst__title">
         <h1>Restaurants</h1>
-        <div class="vertical">
+      </div>
+        <div class="cards">
           <a href="restos/PaletteDuGout.html" class="width">
             <article class="card">
               <div class="container__one">
@@ -168,6 +173,7 @@
       <div class="footer__width">
         <div><a href="#" class="shrinkhand color">ohmyfood</a></div>
         <div class="nav">
+          <div>
           <div class="icon">
             <div>
               <i
@@ -176,7 +182,7 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <a href="#" class="color">Proposer un restaurant</a>
+            <a href="#" class="color weight__one">Proposer un restaurant</a>
           </div>
           <div class="icon">
             <div>
@@ -186,10 +192,12 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <a href="#" class="color">Devenir partenaire</a>
+            <a href="#" class="color weight__one">Devenir partenaire</a>
           </div>
-          <a href="#" class="color">Mentions légales</a>
-          <a href="mailto:email@exemple.com?" class="color">Contact</a>
+        </div>
+        <div class="nav">
+          <a href="#" class="color weight__two">Mentions légales</a>
+          <a href="mailto:email@exemple.com?" class="color weight__two">Contact</a>
         </div>
       </div>
     </footer>

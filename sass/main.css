@@ -13,6 +13,7 @@
 /**Autres Couleurs **/
 /** Couleurs de CTA **/
 /** Paramètres généraux **/
+/** ENTÊTE **/
 /** Accueil - Fonctionnement **/
 /** Accueil - Cartes Restaurants **/
 /** Partie haute de la card **/
@@ -52,14 +53,8 @@ a {
   text-decoration: none;
 }
 
-/** LOGO page accueil**/
+/** ENTÊTES page accueil et restos**/
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
-  position: relative;
-  z-index: 2;
   height: 3.938rem;
   /**** Media Queries ****/
 }
@@ -67,6 +62,26 @@ a {
   width: 10.125rem;
   height: 2.75rem;
   margin-top: 0.8rem;
+}
+.header__accueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  position: relative;
+  z-index: 2;
+}
+.header__restos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1.5rem;
+  gap: 19%;
+}
+@media screen and (min-width: 768px) {
+  .header__restos {
+    gap: 41%;
+  }
 }
 @media screen and (min-width: 768px) {
   .header .header {
@@ -79,46 +94,13 @@ a {
   }
 }
 
-/** LOGO pages restos**/
-.header__restos {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 1.5rem;
-  gap: 19%;
-  height: 3.938rem;
-  /**** Media Queries ****/
-}
-@media screen and (min-width: 768px) {
-  .header__restos {
-    gap: 41%;
-  }
-}
-.header__restos .logo {
-  width: 10.125rem;
-  height: 2.75rem;
-  margin-top: 0.8rem;
-}
-@media screen and (min-width: 768px) {
-  .header__restos .header {
-    height: 6rem;
-  }
-  .header__restos .logo {
-    width: 12.5rem;
-    height: 2.138rem;
-    margin-top: 0;
-  }
-}
-
 .footer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 7%;
-  padding-left: 7%;
-  padding-bottom: 5%;
   background-color: #353535;
 }
 .footer__width {
+  padding-top: 7%;
+  padding-left: 7%;
+  padding-bottom: 5%;
   width: 90%;
 }
 .footer .shrinkhand {
@@ -128,12 +110,23 @@ a {
 .footer .color {
   color: #ffffff;
 }
+.footer .weight__one {
+  font-weight: 500;
+}
+.footer .weight__two {
+  font-weight: 400;
+}
 .footer .nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   line-height: 1.7rem;
   margin-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer .nav {
+    flex-direction: row;
+    gap: 10px;
+  }
 }
 .footer .icon {
   display: flex;
@@ -166,28 +159,42 @@ a {
 }
 
 /** Section Restaurants **/
-.vertical {
+.cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.2rem;
+  margin-top: 1.5rem;
   /** style pour la balise <a> qui enveloppe la carte**/
 }
-.vertical .width {
+@media screen and (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+    gap: 50px 100px;
+  }
+}
+.cards .width {
   width: 100%;
   /** style pour la carte**/
 }
-.vertical .width .card {
+@media screen and (min-width: 768px) {
+  .cards .width {
+    width: 35%;
+  }
+}
+.cards .width .card {
   background: #ffffff;
   border-radius: 1rem;
   /** style pour l'étiquette **/
   /** style pour le texte**/
 }
-.vertical .width .card .container__one {
+.cards .width .card .container__one {
   display: flex;
   justify-content: flex-end;
 }
-.vertical .width .card__img {
+.cards .width .card__img {
   object-fit: cover;
   object-position: center;
   position: relative;
@@ -196,7 +203,7 @@ a {
   height: 160px;
   border-radius: 1rem 1rem 0 0;
 }
-.vertical .width .card__label {
+.cards .width .card__label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,12 +220,18 @@ a {
   margin-top: 4%;
   margin-right: 4%;
 }
-.vertical .width .card .container__two {
+@media screen and (min-width: 768px) {
+  .cards .width .card__label {
+    margin-top: 1%;
+    margin-right: 1%;
+  }
+}
+.cards .width .card .container__two {
   display: flex;
   justify-content: space-between;
   padding: 0.8rem;
 }
-.vertical .width .card__txt {
+.cards .width .card__txt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -227,7 +240,7 @@ a {
   font-size: 1.063rem;
   font-weight: 300;
 }
-.vertical .width .card__heart {
+.cards .width .card__heart {
   display: flex;
   flex-direction: column;
   padding: 1rem 0.6rem;
@@ -286,14 +299,28 @@ a {
 }
 
 /** Section Fonctionnement **/
+.fct__title {
+  padding: 3.25rem 1.25rem 1.8rem;
+}
+@media screen and (min-width: 768px) {
+  .fct__title {
+    margin-left: 17.3%;
+  }
+}
+
 .direction {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
   gap: 1.5rem;
-  margin-bottom: 4rem;
 }
-.direction .fct {
-  padding: 3.25rem 1.25rem 0.5rem;
+@media screen and (min-width: 768px) {
+  .direction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3rem;
+  }
 }
 .direction .choice {
   display: flex;
@@ -306,11 +333,18 @@ a {
   margin-left: 1.25rem;
   background: #9356dc;
   color: #ffffff;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 1rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 0.6rem;
   margin-right: -0.7rem;
   z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .direction .choice__order {
+    width: 1.8rem;
+    height: 1.5rem;
+    border-radius: 0.7rem;
+  }
 }
 .direction .choice .btn {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -321,10 +355,15 @@ a {
   color: #000000;
   font-size: 1rem;
   font-weight: 500;
-  width: 69%;
+  width: 71%;
   padding: 1.7rem;
   border-radius: 1.5rem;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .direction .choice .btn {
+    width: 100%;
+  }
 }
 .direction .choice .btn i {
   color: #7e7e7e;
@@ -336,10 +375,15 @@ a {
 /** Paramètres section Restaurants**/
 .bckg {
   background-color: #F6F6F6;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 3.25rem 1.25rem 4.5rem 1.25rem;
+  padding: 52px 20px 72px 20px;
+}
+@media screen and (min-width: 768px) {
+  .bckg {
+    padding: 30px 120px 30px 140px;
+  }
+  .bckg .rst__title {
+    margin-left: 11%;
+  }
 }
 
 /** Taille Photo**/

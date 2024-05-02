@@ -1,15 +1,22 @@
-/** LOGO page accueil**/
+/** ENTÊTES page accueil et restos**/
 .header {
-  @include flexcenter;
-  @include lightshadow;
-  position: relative;
-  z-index: 2;
   height: 3.938rem;
- 
+  
   .logo {
     width: 10.125rem;
     height: 2.75rem;
     margin-top: 0.8rem;
+  }
+ 
+  &__accueil {
+    @include flexcenter;
+    @include lightshadow;
+    position: relative;
+    z-index: 2;
+  }
+  
+  &__restos {
+    @include arrow;
   }
   
     /**** Media Queries ****/
@@ -27,28 +34,3 @@
 
 }
 
-/** LOGO pages restos**/
-
-.header__restos {
-  @include arrow;
-  height: 3.938rem;
- 
-  .logo {
-    width: 10.125rem;
-    height: 2.75rem;
-    margin-top: 0.8rem;
-  }
-
-  /**** Media Queries ****/
-  @media screen and (min-width: 768px) {
-    .header {
-      height: 6rem;
-    }
-
-    .logo {
-      width: 12.5rem;
-      height: 2.138rem;
-      margin-top: 0;
-    }
-  }
-}
