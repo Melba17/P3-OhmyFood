@@ -99,25 +99,19 @@
 }
 
 /** FOOTER **/
-@mixin footer {
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-direction: row-reverse;
-    }  
-}
-@mixin footer__two {
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        gap: 10px;
-    }
-}
-
 @mixin space {
     display: flex;
     gap: 0.7rem;
+}
+
+@mixin footer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@mixin footer__two {
+    display: flex;
+    flex-direction: row;
 }
 
 /** Vignettes pages restaurants**/

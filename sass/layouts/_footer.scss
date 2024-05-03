@@ -6,16 +6,41 @@
         padding-left: 7%;
         padding-bottom: 5%;
         width: 90%;
+        line-height: 1.7rem;
+
+        /** Media Queries pour le footer général **/
+
+        @media screen and (min-width: 768px) {
+            @include footer;
+            padding-top: 5%;
+            padding-left: 6%;
+            padding-bottom: 2%;       
+        }
+    }
+   /** Marge OhmyFood **/
+    &__marge {
+        margin-bottom: 1rem;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 0;
+            margin-left: 100px;
+        }
+        .shrinkhand {
+            font-family: $title-font;
+            font-size: 1.125rem;
+        }
+    }
+    /** espace entre icônes et caractères **/
+    .icon {
+        @include space;
     }
 
-    & .shrinkhand {
-        font-family: $title-font;
-        font-size: 1.125rem;
-    }
+    /** Couleur générale des caractères **/
     & .color {
         color: $white-color;
     }
 
+    /** Différentes graisses pour les 2 dernières rubriques **/
     & .weight__one {
         font-weight: 500;
     }
@@ -23,15 +48,21 @@
     & .weight__two {
         font-weight: 400;
     }
-
-    & .nav {
-       @include footer__two;
-       line-height: 1.7rem;
-       margin-top: 1rem;     
+    
+    /** Media Queries pour le sens et l'ordre des différents blocs **/
+    @media screen and (min-width: 768px) {
+        .footer__two {
+        @include footer__two;
+        margin-top: 5px;
+        }
+        .order__one {
+            order: 1;
+            gap: 17px;
+            margin-left: 50px;
+        }
+        .order__two {
+            order: 2;
+            gap:10px;
+        }
     }
-
-    .icon {
-        @include space;
-    }
-
 }
