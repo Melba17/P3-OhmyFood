@@ -6,7 +6,6 @@
     color: $white-color;
     margin: auto;
     height: 3.125rem;
-    width: 60%;
     border-radius: 30px;
     cursor: pointer;
 
@@ -15,10 +14,22 @@
         background: $light-gradient;
         @include extrashadow;
     }
+
+    &__one {
+        width: 58%;
+    }
+    &__two {
+        width: 52%;
+    }
     
     /**** Media Queries ****/
     @media screen and (min-width: 768px) {
-        width: 15%;
+        &__one {
+            width: 16%;
+        }
+        &__two {
+            width: 30%;
+        }
     }
 }
 
