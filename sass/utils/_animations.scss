@@ -1,0 +1,13 @@
+@keyframes loader {
+    100% { transform: scale(2); }
+  }
+  
+  @keyframes visibilité {
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+  }
+  

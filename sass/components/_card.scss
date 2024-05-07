@@ -2,19 +2,19 @@
 .cards {
     @include cards;
 
-    /** style pour la balise <a> qui enveloppe la carte**/
+    /** taille pour la balise <a> qui enveloppe la carte**/
     .width {
         width: 100%;
+        background: $white-color;
+        border-radius: 1rem;
+        
 
         @media screen and (min-width: 768px) {
             width: 35%;
           }
 
-        /** style pour la carte**/
+        /** style pour la carte entièrement cliquable **/
         .card {
-                background: $white-color;
-                border-radius: 1rem;
-
                 .container__one {
                     @include img;
                 }
@@ -46,12 +46,12 @@
                     @media screen and (min-width: 768px) {
                         margin-top: 1%;
                         margin-right: 1%;
-                      }
+                    }
                 }
 
             /** style pour le texte**/
                 .container__two {
-                    @include align__heart;
+                    padding: 0.8rem;  
                 }
 
                         &__txt {
@@ -62,11 +62,52 @@
                             font-weight: 300;
                         }
 
-                        &__heart {
-                            @include position;
-                            color: $black-color;
-                        }   
-        }
+                        .align__heart {
+                            @include align__heart;
+                        }
+
+                       .heart {
+                        position: relative;
+                        margin-top: 23px;
+                        margin-right: 25px;
+
+                            .checkbox {
+                                width: 15px;
+                                height: 14px;
+                                opacity: 0;
+                                transition: opacity 0.2s ease-in-out;
+                            }
+
+                            &__empty,
+                            &__full {
+                                position: absolute;
+                                margin-top: 9px;
+                                margin-left: -20px;
+                            }
+                    
+                            /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+                            input[type="checkbox"]:checked ~ .heart__full {
+                            opacity: 1;
+                            }
+                    
+                            &__full {
+                                opacity: 0;
+                                transition: opacity 0.2s ease-in-out;
+                    
+                                &:active {
+                                    opacity: 1;
+                                }
+                                @media screen and (min-width: 768px) {
+                                    &:hover {
+                                        opacity: 1;
+                                    }
+                                  }
+                            }
+                        }
+                
+                        
+
+        }    
         
-    }  
+    } 
 }

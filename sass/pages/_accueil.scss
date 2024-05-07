@@ -103,6 +103,7 @@
       
       i {
         color: $mediumgrey-color;
+        transition: color 0.2s cubic-bezier(.4,.1,.6,.9);
       }
 
       &:hover i,

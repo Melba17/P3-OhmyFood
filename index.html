@@ -26,6 +26,16 @@
     <link rel="stylesheet" href="sass/main.css" />
   </head>
   <body>
+    <!-- LOADER -->
+    <div class="middle loader">
+      <div><p class="loader__title">Ohmyfood</p></div>
+      <div>
+        <span class="loader__element loader__element--1"></span>
+        <span class="loader__element loader__element--2"></span>
+        <span class="loader__element loader__element--3"></span>
+      </div>
+    </div>
+
     <header>
       <!-- ENTÊTE -->
       <div class="header header__accueil">
@@ -51,7 +61,7 @@
         <p class="presentation__two">
           Découvrez des restaurants d’exception, sélectionnés par nos soins.
         </p>
-        <a href="#restos" class="cta cta__one">Explorer nos restaurants</a>
+        <a href="#restos" class="cta cta__one"> Explorer nos restaurants </a>
       </div>
       <section>
         <div class="fct__title">
@@ -89,8 +99,8 @@
           <h1>Restaurants</h1>
         </div>
         <div class="cards">
-          <a href="restos/PaletteDuGout.html" class="width">
-            <article class="card">
+          <article class="width">
+            <a href="restos/PaletteDuGout.html" class="card">
               <div class="container__one">
                 <span class="card__label">Nouveau</span>
                 <img
@@ -99,19 +109,33 @@
                   class="card__img"
                 />
               </div>
-              <div class="container__two">
-                <div class="card__txt">
-                  <h3>La palette du goût</h3>
-                  <p>Ménilmontant</p>
+              <div class="align__heart">
+                <div class="container__two">
+                  <div class="card__txt">
+                    <h3>La palette du goût</h3>
+                    <p>Ménilmontant</p>
+                  </div>
                 </div>
-                <div class="card__heart">
-                  <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                <div class="heart">
+                  <label for="coeurs">
+                    <input type="checkbox" id="coeurs" class="checkbox" />
+                    <i
+                      class="far fa-heart fa-xl heart__empty"
+                      style="color: #000000"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-xl heart__full"
+                      style="color: #9356dc"
+                      aria-hidden="true"
+                    ></i>
+                  </label>
                 </div>
               </div>
-            </article>
-          </a>
-          <a href="#" class="width">
-            <article class="card">
+            </a>
+          </article>
+          <article class="width">
+            <a href="restos/PaletteDuGout.html" class="card">
               <div class="container__one">
                 <span class="card__label">Nouveau</span>
                 <img
@@ -120,53 +144,95 @@
                   class="card__img"
                 />
               </div>
-              <div class="container__two">
-                <div class="card__txt">
-                  <h3>La note enchantée</h3>
-                  <p>Charonne</p>
+              <div class="align__heart">
+                <div class="container__two">
+                  <div class="card__txt">
+                    <h3>La note enchantée</h3>
+                    <p>Charonne</p>
+                  </div>
                 </div>
-                <div class="card__heart">
-                  <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                <div class="heart">
+                  <label for="coeurs">
+                    <input type="checkbox" id="coeurs" class="checkbox" />
+                    <i
+                      class="far fa-heart fa-xl heart__empty"
+                      style="color: #000000"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-xl heart__full"
+                      style="color: #9356dc"
+                      aria-hidden="true"
+                    ></i>
+                  </label>
                 </div>
               </div>
-            </article>
-          </a>
-          <a href="#" class="width">
-            <article class="card">
+            </a>
+          </article>
+          <article class="width">
+            <a href="restos/PaletteDuGout.html" class="card">
               <img
                 src="Images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                 alt="Image de restaurant montrant des plats"
                 class="card__img"
               />
-              <div class="container__two">
-                <div class="card__txt">
-                  <h3>À la française</h3>
-                  <p>Cité Rouge</p>
+              <div class="align__heart">
+                <div class="container__two">
+                  <div class="card__txt">
+                    <h3>À la française</h3>
+                    <p>Cité Rouge</p>
+                  </div>
                 </div>
-                <div class="card__heart">
-                  <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                <div class="heart">
+                  <label for="coeurs">
+                    <input type="checkbox" id="coeurs" class="checkbox" />
+                    <i
+                      class="far fa-heart fa-xl heart__empty"
+                      style="color: #000000"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-xl heart__full"
+                      style="color: #9356dc"
+                      aria-hidden="true"
+                    ></i>
+                  </label>
                 </div>
               </div>
-            </article>
-          </a>
-          <a href="#" class="width">
-            <article class="card">
+            </a>
+          </article>
+          <article class="width">
+            <a href="restos/PaletteDuGout.html" class="card">
               <img
                 src="Images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                 alt="Image de restaurant montrant des plats"
                 class="card__img"
               />
-              <div class="container__two">
-                <div class="card__txt">
-                  <h3>Le délice des sens</h3>
-                  <p>Folie-Méricourt</p>
+              <div class="align__heart">
+                <div class="container__two">
+                  <div class="card__txt">
+                    <h3>Le délice des sens</h3>
+                    <p>Folie-Méricourt</p>
+                  </div>
                 </div>
-                <div class="card__heart">
-                  <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                <div class="heart">
+                  <label for="coeurs">
+                    <input type="checkbox" id="coeurs" class="checkbox" />
+                    <i
+                      class="far fa-heart fa-xl heart__empty"
+                      style="color: #000000"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-xl heart__full"
+                      style="color: #9356dc"
+                      aria-hidden="true"
+                    ></i>
+                  </label>
                 </div>
               </div>
-            </article>
-          </a>
+            </a>
+          </article>
         </div>
       </section>
     </main>
