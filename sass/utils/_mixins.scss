@@ -118,10 +118,7 @@
 }
 
 /** Vignettes pages restaurants**/
-@mixin price {
-    display: flex;
-    justify-content: space-between;
-}
+
 @mixin restos {
     padding-top: 2rem;
     padding-left: 1rem;

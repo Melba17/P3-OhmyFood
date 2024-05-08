@@ -1,13 +1,28 @@
+/** Keyframes LOADER **/
 @keyframes loader {
-    100% { transform: scale(2); }
+    100% { 
+      transform: scale(2); 
+    }
   }
   
-  @keyframes visibilité {
-    90%{
+@keyframes visibilité {
+    90% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
     }
   }
-  
+
+/** Keyframes Blocs Menu **/
+@keyframes menu {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

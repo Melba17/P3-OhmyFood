@@ -22,42 +22,54 @@
     margin-bottom: 2.5rem;
 }
 /** Alignement titre et coeur **/
-.align__title {
-    @include align;
-    margin-left: 5px;
-    margin-bottom: 32px;
+.align__title__two {
+  @include align;
+  margin-bottom: 25px;
 
-    @media screen and (min-width: 768px) {
-      margin: auto;
-      margin-bottom: 40px;
-    }
+  @media screen and (min-width: 768px) {
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+/** Coeur **/
+.myheart {
+  position: relative;
+  margin-left: 40px;
+  
 
-  .heart {
-    cursor: pointer;
-        &__empty {
-        margin-left: 35px;
-        }
+      .checkbox__two {
+          width: 15px;
+          height: 14px;
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+      }
 
-        &__full {
-        position: absolute;
-        margin-top: 9.1px;
-        margin-left: -24px;
-        opacity: 0;
-        transition: opacity 0.2s cubic-bezier(.4,.1,.6,.9);
-       
+      &__empty,
+      &__full {
+          position: absolute;
+          margin-top: 9px;
+          margin-left: -20px;
+      }
+
+      /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+      input[type="checkbox"]:checked ~ .myheart__full {
+      opacity: 1;
+      }
+
+      &__full {
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
 
           &:active {
-            opacity: 1;
+              opacity: 1;
           }
           @media screen and (min-width: 768px) {
-            &:hover {
-                opacity: 1;
+              &:hover {
+                  opacity: 1;
+              }
             }
-          }
-        }
+      }
   }
-
-}
 
 /** Soulignage du titre h4 **/
 .underline {
@@ -68,20 +80,75 @@
     margin-bottom: 0.9rem;
 }
 
+/** Animation bloc menu **/
+.box {
+  animation: menu 1.5s 100ms both;
+}
+.box__one {
+  animation: menu 1.5s 150ms both; 
+}
+.box__two {
+  animation: menu 1.5s 300ms both; 
+}
+.box__three {
+  animation: menu 1.5s 450ms both; 
+}
+
 /** Vignettes plats **/
 .vignette {
-    @include price;
+    @include align__heart;
     @include extendshadow;
       background: $white-color;
       color: $black-color;
-      width: 90%;
-      padding: 0.7rem 1rem;
+      width: 100%;
       border-radius: 1rem;
       line-height: 1.5rem;
       
+      .vignette__bar {
+        @include flexcenter;
+        margin-left: 14.2%;
+        background-color: $green-color;
+        width: 19.1%;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: right 50%;
+        transition: all .3s ease-in-out;
+
+        @media screen and (min-width: 768px) {
+          width: 10%;
+          margin-left: 50.9%;
+        }
+      }
       
+      &:hover {
+        & > .vignette__bar {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        & > .vignette__price {
+        transform: translateX(-50px)
+        }
+       
+      }
+     
+
+      &__check {
+        @include flexcenter;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: $white-color;
+      }
+
       &:not(:last-child) {
         margin-bottom: 0.75rem;
+      }
+
+      .padding {
+        padding: 11.2px 16px;
       }
 
       &__one {
@@ -95,9 +162,10 @@
       }
 
       &__price {
-        margin-top: 1.5rem;
+        margin-top: 35px;
         font-size: 0.94rem;
         font-weight: 700;
         color: $darkgrey-color;
+        transition: transform .3s ease-in-out;
       }
 }
