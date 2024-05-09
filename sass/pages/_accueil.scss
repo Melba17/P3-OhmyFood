@@ -9,6 +9,10 @@
   height: 3.125rem;
   background-color: $lightgrey-color;
 
+  i {
+    color: $darkgrey-color;
+  }
+
   & .paris {
   color: $darkgrey-color;
   font-weight: 500;

@@ -115,6 +115,71 @@ a {
   }
 }
 
+/** Paramètres généraux des coeurs **/
+.far {
+  position: absolute;
+  font-size: 25px;
+  color: transparent;
+  background-clip: text;
+  background-color: #000000;
+  transition: opacity 0.2s ease-in-out;
+}
+.far:active {
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .far:hover {
+    opacity: 0;
+  }
+}
+
+.fas {
+  position: absolute;
+  font-size: 25px;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to bottom, #ff79da, #9356dc);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.fas:active {
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .fas:hover {
+    opacity: 1;
+  }
+}
+
+.checkbox {
+  width: 15px;
+  height: 14px;
+  opacity: 0;
+}
+
+/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+input[type=checkbox]:checked ~ .fas {
+  opacity: 1;
+}
+
+/** Coeur pages accueil / cards **/
+.heart {
+  position: relative;
+  margin-top: 20px;
+  margin-right: 8px;
+  width: 50px;
+  height: 50px;
+}
+
+/** Coeur pages restaurants **/
+.myheart {
+  position: relative;
+  margin-top: 7px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
 /** Section Restaurants **/
 .cards {
   display: flex;
@@ -199,38 +264,6 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.cards .width .card .heart {
-  position: relative;
-  margin-top: 23px;
-  margin-right: 25px;
-  /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-}
-.cards .width .card .heart .checkbox {
-  width: 15px;
-  height: 14px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.cards .width .card .heart__empty, .cards .width .card .heart__full {
-  position: absolute;
-  margin-top: 9px;
-  margin-left: -20px;
-}
-.cards .width .card .heart input[type=checkbox]:checked ~ .heart__full {
-  opacity: 1;
-}
-.cards .width .card .heart__full {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.cards .width .card .heart__full:active {
-  opacity: 1;
-}
-@media screen and (min-width: 768px) {
-  .cards .width .card .heart__full:hover {
-    opacity: 1;
-  }
-}
 
 /** Alignement vertical des 2 blocs du loader **/
 .middle {
@@ -251,7 +284,7 @@ a {
   top: 0px;
   left: 0px;
   z-index: 100000;
-  animation: visibilité 3s ease forwards;
+  animation: visibilité 0.2s ease forwards;
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -357,6 +390,9 @@ a {
   width: 100%;
   height: 3.125rem;
   background-color: #eaeaea;
+}
+.location i {
+  color: #353535;
 }
 .location .paris {
   color: #353535;
@@ -488,6 +524,7 @@ a {
 .footer {
   background-color: #353535;
   /** Marge OhmyFood **/
+  /** couleur icônes **/
   /** espace entre icônes et caractères **/
   /** Couleur générale des caractères **/
   /** Différentes graisses pour les 2 dernières rubriques **/
@@ -522,6 +559,9 @@ a {
 .footer__marge .shrinkhand {
   font-family: "Shrikhand", serif;
   font-size: 1.125rem;
+}
+.footer i {
+  color: #ffffff;
 }
 .footer .icon {
   display: flex;
@@ -595,46 +635,12 @@ a {
 /** Alignement titre et coeur **/
 .align__title__two {
   display: flex;
-  align-items: center;
   margin-bottom: 25px;
 }
 @media screen and (min-width: 768px) {
   .align__title__two {
     margin: auto;
     margin-bottom: 40px;
-  }
-}
-
-/** Coeur **/
-.myheart {
-  position: relative;
-  margin-left: 40px;
-  /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-}
-.myheart .checkbox__two {
-  width: 15px;
-  height: 14px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.myheart__empty, .myheart__full {
-  position: absolute;
-  margin-top: 9px;
-  margin-left: -20px;
-}
-.myheart input[type=checkbox]:checked ~ .myheart__full {
-  opacity: 1;
-}
-.myheart__full {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.myheart__full:active {
-  opacity: 1;
-}
-@media screen and (min-width: 768px) {
-  .myheart__full:hover {
-    opacity: 1;
   }
 }
 
@@ -700,7 +706,7 @@ a {
   opacity: 1;
 }
 .vignette:hover > .vignette__price {
-  transform: translateX(-50px);
+  transform: translateX(-25px);
 }
 .vignette__check {
   display: flex;

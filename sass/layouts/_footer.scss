@@ -30,6 +30,10 @@
             font-size: 1.125rem;
         }
     }
+    /** couleur icônes **/
+    i {
+        color: $white-color;
+    }
     /** espace entre icônes et caractères **/
     .icon {
         @include space;

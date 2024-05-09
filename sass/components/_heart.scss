@@ -1,0 +1,69 @@
+/** Paramètres généraux des coeurs **/
+.far {
+    position: absolute;
+    font-size: 25px;
+    color: transparent;
+    background-clip: text;
+    background-color: $black-color;
+    transition: opacity 0.2s ease-in-out;
+    
+    &:active {
+        opacity: 0;
+    }
+    @media screen and (min-width: 768px) {
+        &:hover {
+            opacity: 0;
+        }
+      }
+}
+
+.fas { 
+    position: absolute;
+    font-size: 25px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, $pink-color, $purple-color);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    &:active {
+        opacity: 1;
+    }
+    @media screen and (min-width: 768px) {
+        &:hover {
+            opacity: 1;
+        }
+      }
+}
+.checkbox {
+            width: 15px;
+            height: 14px;
+            opacity: 0;
+        }
+/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+input[type="checkbox"]:checked ~ .fas {
+opacity: 1;
+}
+
+/** Coeur pages accueil / cards **/
+.heart {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 
+    8px;
+    width: 50px;
+    height: 50px;
+}   
+
+/** Coeur pages restaurants **/
+.myheart {
+    position: relative;
+    margin-top: 7px;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}    
+  
+        
+
+        

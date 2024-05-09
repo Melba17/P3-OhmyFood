@@ -65,49 +65,7 @@
                         .align__heart {
                             @include align__heart;
                         }
-
-                       .heart {
-                        position: relative;
-                        margin-top: 23px;
-                        margin-right: 25px;
-
-                            .checkbox {
-                                width: 15px;
-                                height: 14px;
-                                opacity: 0;
-                                transition: opacity 0.2s ease-in-out;
-                            }
-
-                            &__empty,
-                            &__full {
-                                position: absolute;
-                                margin-top: 9px;
-                                margin-left: -20px;
-                            }
-                    
-                            /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-                            input[type="checkbox"]:checked ~ .heart__full {
-                            opacity: 1;
-                            }
-                            
-                    
-                            &__full {
-                                opacity: 0;
-                                transition: opacity 0.2s ease-in-out;
-                    
-                                &:active {
-                                    opacity: 1;
-                                }
-                                @media screen and (min-width: 768px) {
-                                    &:hover {
-                                        opacity: 1;
-                                    }
-                                  }
-                                
-                            }
-                        }
-                
-                        
+         
 
         }    
         

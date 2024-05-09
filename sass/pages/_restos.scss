@@ -23,7 +23,7 @@
 }
 /** Alignement titre et coeur **/
 .align__title__two {
-  @include align;
+  @include display;
   margin-bottom: 25px;
 
   @media screen and (min-width: 768px) {
@@ -31,45 +31,6 @@
     margin-bottom: 40px;
   }
 }
-/** Coeur **/
-.myheart {
-  position: relative;
-  margin-left: 40px;
-  
-
-      .checkbox__two {
-          width: 15px;
-          height: 14px;
-          opacity: 0;
-          transition: opacity 0.2s ease-in-out;
-      }
-
-      &__empty,
-      &__full {
-          position: absolute;
-          margin-top: 9px;
-          margin-left: -20px;
-      }
-
-      /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-      input[type="checkbox"]:checked ~ .myheart__full {
-      opacity: 1;
-      }
-
-      &__full {
-          opacity: 0;
-          transition: opacity 0.2s ease-in-out;
-
-          &:active {
-              opacity: 1;
-          }
-          @media screen and (min-width: 768px) {
-              &:hover {
-                  opacity: 1;
-              }
-            }
-      }
-  }
 
 /** Soulignage du titre h4 **/
 .underline {
@@ -128,11 +89,10 @@
           opacity: 1;
         }
         & > .vignette__price {
-        transform: translateX(-50px)
+        transform: translateX(-25px)
         }
        
       }
-     
 
       &__check {
         @include flexcenter;
