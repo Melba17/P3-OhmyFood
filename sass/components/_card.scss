@@ -50,23 +50,18 @@
                 }
 
             /** style pour le texte**/
-                .container__two {
-                    padding: 0.8rem;  
-                }
-
+           
                         &__txt {
                             @include column;
                             line-height: 1.6rem;
                             color: $black-color;
                             font-size: 1.063rem;
                             font-weight: 300;
-                        }
-
-                        .align__heart {
-                            @include align__heart;
+                            padding: 0.8rem; 
+                            margin-right: 30px;
                         }
          
-
+                        
         }    
         
     } 

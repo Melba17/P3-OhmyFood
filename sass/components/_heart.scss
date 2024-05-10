@@ -1,11 +1,15 @@
 /** Paramètres généraux des coeurs **/
-.far {
+.fa__base {
     position: absolute;
     font-size: 25px;
     color: transparent;
     background-clip: text;
-    background-color: $black-color;
+    cursor: pointer;
     transition: opacity 0.2s ease-in-out;
+}
+
+.far { 
+    background-color: $black-color;
     
     &:active {
         opacity: 0;
@@ -18,13 +22,9 @@
 }
 
 .fas { 
-    position: absolute;
-    font-size: 25px;
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(to bottom, $pink-color, $purple-color);
+    background-image: linear-gradient(to bottom, $purple-color, $pink-color);
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    
 
     &:active {
         opacity: 1;
@@ -36,8 +36,7 @@
       }
 }
 .checkbox {
-            width: 15px;
-            height: 14px;
+            position: absolute;
             opacity: 0;
         }
 /** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
@@ -45,24 +44,29 @@ input[type="checkbox"]:checked ~ .fas {
 opacity: 1;
 }
 
-/** Coeur pages accueil / cards **/
-.heart {
-    position: relative;
-    margin-top: 20px;
-    margin-right: 
-    8px;
-    width: 50px;
-    height: 50px;
-}   
+.container__two {
+    @include align__heart;
+}
 
-/** Coeur pages restaurants **/
-.myheart {
+.carre {
+    cursor: pointer;
     position: relative;
-    margin-top: 7px;
-    margin-left: 10px;
-    width: 50px;
-    height: 50px;
-}    
+    width: 60px;
+    height: 60px;
+
+            /** Coeur pages accueil / cards **/
+        &__heart {
+            margin-top: 20px;
+            margin-right: -15px;
+        }   
+
+        /** Coeur pages restaurants **/
+        &__myheart {
+            margin-top: 7px;
+            margin-left: 25px;
+        }    
+}
+
   
         
 

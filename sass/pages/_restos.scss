@@ -22,19 +22,19 @@
     margin-bottom: 2.5rem;
 }
 /** Alignement titre et coeur **/
-.align__title__two {
+.align__title {
   @include display;
-  margin-bottom: 25px;
-
+  margin-bottom: 5px;
+ 
   @media screen and (min-width: 768px) {
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
   }
 }
 
 /** Soulignage du titre h4 **/
 .underline {
-    background-color:  $green-color;
+    background-color: $green-color;
     height: 0.188rem;
     width: 2.5rem;
     margin-top: 0.3rem;

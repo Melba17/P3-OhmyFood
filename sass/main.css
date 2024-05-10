@@ -19,7 +19,7 @@
 /** Accueil - Cartes Restaurants **/
 /** Partie haute de la card **/
 /** Partie basse de la card **/
-/** alignement texte et coeur **/
+/** alignement texte et coeurde la card**/
 /** FOOTER **/
 /** Mise en forme pages Restos **/
 /** Vignettes pages restaurants**/
@@ -116,13 +116,17 @@ a {
 }
 
 /** Paramètres généraux des coeurs **/
-.far {
+.fa__base {
   position: absolute;
   font-size: 25px;
   color: transparent;
   background-clip: text;
-  background-color: #000000;
+  cursor: pointer;
   transition: opacity 0.2s ease-in-out;
+}
+
+.far {
+  background-color: #000000;
 }
 .far:active {
   opacity: 0;
@@ -134,13 +138,8 @@ a {
 }
 
 .fas {
-  position: absolute;
-  font-size: 25px;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to bottom, #ff79da, #9356dc);
+  background-image: linear-gradient(to bottom, #9356dc, #ff79da);
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
 }
 .fas:active {
   opacity: 1;
@@ -152,8 +151,7 @@ a {
 }
 
 .checkbox {
-  width: 15px;
-  height: 14px;
+  position: absolute;
   opacity: 0;
 }
 
@@ -162,22 +160,26 @@ input[type=checkbox]:checked ~ .fas {
   opacity: 1;
 }
 
-/** Coeur pages accueil / cards **/
-.heart {
-  position: relative;
-  margin-top: 20px;
-  margin-right: 8px;
-  width: 50px;
-  height: 50px;
+.container__two {
+  display: flex;
+  justify-content: space-between;
 }
 
-/** Coeur pages restaurants **/
-.myheart {
+.carre {
+  cursor: pointer;
   position: relative;
+  width: 60px;
+  height: 60px;
+  /** Coeur pages accueil / cards **/
+  /** Coeur pages restaurants **/
+}
+.carre__heart {
+  margin-top: 20px;
+  margin-right: -15px;
+}
+.carre__myheart {
   margin-top: 7px;
-  margin-left: 10px;
-  width: 50px;
-  height: 50px;
+  margin-left: 25px;
 }
 
 /** Section Restaurants **/
@@ -248,9 +250,6 @@ input[type=checkbox]:checked ~ .fas {
     margin-right: 1%;
   }
 }
-.cards .width .card .container__two {
-  padding: 0.8rem;
-}
 .cards .width .card__txt {
   display: flex;
   flex-direction: column;
@@ -259,10 +258,8 @@ input[type=checkbox]:checked ~ .fas {
   color: #000000;
   font-size: 1.063rem;
   font-weight: 300;
-}
-.cards .width .card .align__heart {
-  display: flex;
-  justify-content: space-between;
+  padding: 0.8rem;
+  margin-right: 30px;
 }
 
 /** Alignement vertical des 2 blocs du loader **/
@@ -284,7 +281,7 @@ input[type=checkbox]:checked ~ .fas {
   top: 0px;
   left: 0px;
   z-index: 100000;
-  animation: visibilité 0.2s ease forwards;
+  animation: visibilité 3s ease forwards;
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -633,14 +630,14 @@ input[type=checkbox]:checked ~ .fas {
 }
 
 /** Alignement titre et coeur **/
-.align__title__two {
+.align__title {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 @media screen and (min-width: 768px) {
-  .align__title__two {
+  .align__title {
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
   }
 }
 
