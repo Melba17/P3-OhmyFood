@@ -19,10 +19,11 @@
 /** Accueil - Cartes Restaurants **/
 /** Partie haute de la card **/
 /** Partie basse de la card **/
-/** alignement texte et coeurde la card**/
+/** alignement texte et coeur de la card**/
 /** FOOTER **/
 /** Mise en forme pages Restos **/
 /** Vignettes pages restaurants**/
+/** Pour couper le texte à l'aide de 3 petits points **/
 /** Ombres Portées **/
 /** Keyframes LOADER **/
 @keyframes loader {
@@ -168,18 +169,16 @@ input[type=checkbox]:checked ~ .fas {
 .carre {
   cursor: pointer;
   position: relative;
-  width: 60px;
-  height: 60px;
   /** Coeur pages accueil / cards **/
   /** Coeur pages restaurants **/
 }
 .carre__heart {
   margin-top: 20px;
-  margin-right: -15px;
+  margin-right: 45px;
 }
 .carre__myheart {
   margin-top: 7px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 /** Section Restaurants **/
@@ -612,7 +611,7 @@ input[type=checkbox]:checked ~ .fas {
   margin-top: -3rem;
   position: relative;
   background-color: #F6F6F6;
-  border-radius: 1.9rem 1.9rem 0 0;
+  border-radius: 30px 30px 0 0;
 }
 @media screen and (min-width: 768px) {
   .bckg__restos {
@@ -624,30 +623,30 @@ input[type=checkbox]:checked ~ .fas {
   }
 }
 
-/** Marge "bloc menu" et cta **/
-.marge {
-  margin-bottom: 2.5rem;
-}
-
 /** Alignement titre et coeur **/
 .align__title {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
   .align__title {
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
+}
+
+/** Marge "bloc menu" et cta **/
+.marge {
+  margin-bottom: 40px;
 }
 
 /** Soulignage du titre h4 **/
 .underline {
   background-color: #99e2d0;
-  height: 0.188rem;
-  width: 2.5rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.9rem;
+  height: 3.008px;
+  width: 40px;
+  margin-top: 4.8px;
+  margin-bottom: 14.4px;
 }
 
 /** Animation bloc menu **/
@@ -667,7 +666,7 @@ input[type=checkbox]:checked ~ .fas {
   animation: menu 1.5s 450ms both;
 }
 
-/** Vignettes plats **/
+/** Paramètres Vignettes plats **/
 .vignette {
   display: flex;
   justify-content: space-between;
@@ -675,37 +674,85 @@ input[type=checkbox]:checked ~ .fas {
   background: #ffffff;
   color: #000000;
   width: 100%;
-  border-radius: 1rem;
-  line-height: 1.5rem;
+  border-radius: 16px;
+  line-height: 25px;
+  cursor: pointer;
+  /** On coupe le texte à l'aide de 3 petits points lorsque c'est nécessaire **/
+  /** Paramètres du prix affiché **/
+  /** Paramètres de languette verte **/
+  /** Animation des languettes vertes avec coche qui apparaissent et qui disparaissent au clic ou au survol **/
+}
+.vignette:not(:last-child) {
+  margin-bottom: 12px;
+}
+.vignette__points {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 280px;
+  transition: all 0.3s ease-in-out;
+  /** Media Queries **/
+  /** Paramètres de chaque ligne **/
+}
+.vignette__points:active {
+  width: 190px;
+}
+@media screen and (min-width: 768px) {
+  .vignette__points:hover {
+    width: 280px;
+  }
+}
+.vignette__points--one {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-left: 15px;
+  letter-spacing: -0.4px;
+}
+.vignette__points--two {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.94rem;
+  font-weight: 300;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  letter-spacing: -0.4px;
+}
+.vignette__price {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #353535;
+  margin-top: 35px;
+  margin-left: auto;
+  transition: transform 0.3s ease-in-out;
 }
 .vignette .vignette__bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 14.2%;
   background-color: #99e2d0;
-  width: 19.1%;
+  width: 19%;
+  margin-left: -50px;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   opacity: 0;
   transform: scaleX(0);
-  transform-origin: right 50%;
+  transform-origin: right;
   transition: all 0.3s ease-in-out;
+  /** Paramètres de la coche **/
+  /** couleur de l'icône de la languette **/
 }
 @media screen and (min-width: 768px) {
   .vignette .vignette__bar {
     width: 10%;
-    margin-left: 50.9%;
+    margin-left: -35px;
   }
 }
-.vignette:hover > .vignette__bar {
-  transform: scaleX(1);
-  opacity: 1;
-}
-.vignette:hover > .vignette__price {
-  transform: translateX(-25px);
-}
-.vignette__check {
+.vignette .vignette__bar__check {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -715,24 +762,22 @@ input[type=checkbox]:checked ~ .fas {
   border-radius: 10px;
   background-color: #ffffff;
 }
-.vignette:not(:last-child) {
-  margin-bottom: 0.75rem;
+.vignette .vignette__bar i {
+  color: #99e2d0;
 }
-.vignette .padding {
-  padding: 11.2px 16px;
+.vignette:active > .vignette__bar {
+  transform: scaleX(1);
+  opacity: 1;
 }
-.vignette__one {
-  font-size: 1.125rem;
-  font-weight: 500;
+.vignette:active > .vignette__price {
+  transform: translateX(-65px);
 }
-.vignette__two {
-  font-size: 0.94rem;
-  font-weight: 300;
-}
-.vignette__price {
-  margin-top: 35px;
-  font-size: 0.94rem;
-  font-weight: 700;
-  color: #353535;
-  transition: transform 0.3s ease-in-out;
+@media screen and (min-width: 768px) {
+  .vignette:hover > .vignette__bar {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  .vignette:hover > .vignette__price {
+    transform: translateX(-50px);
+  }
 }/*# sourceMappingURL=main.css.map */

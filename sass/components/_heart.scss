@@ -45,25 +45,23 @@ opacity: 1;
 }
 
 .container__two {
-    @include align__heart;
+    @include symbol;
 }
 
 .carre {
     cursor: pointer;
     position: relative;
-    width: 60px;
-    height: 60px;
-
+    
             /** Coeur pages accueil / cards **/
         &__heart {
             margin-top: 20px;
-            margin-right: -15px;
+            margin-right: 45px;
         }   
 
         /** Coeur pages restaurants **/
         &__myheart {
             margin-top: 7px;
-            margin-left: 25px;
+            margin-left: 20px;
         }    
 }
 
