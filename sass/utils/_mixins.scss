@@ -51,14 +51,14 @@
 @mixin vertical {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
-    gap: 1.5rem;
+    margin-bottom: 48px;
+    gap: 24px;
 
     @media screen and (min-width: 768px) {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 0.3rem;
+        gap: 4.8px;
     }
 }
 
@@ -66,8 +66,8 @@
 @mixin cards {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    margin-top: 1.5rem;
+    gap: 19.2px;
+    margin-top: 24px;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
@@ -99,7 +99,7 @@
 /** FOOTER **/
 @mixin space {
     display: flex;
-    gap: 0.7rem;
+    gap: 11.2px;
 }
 
 @mixin footer {
@@ -120,10 +120,10 @@
 /** Vignettes pages restaurants**/
 
 @mixin restos {
-    padding-top: 2rem;
-    padding-left: 1rem;
-    padding-right: 0.6rem;
-    margin-top: -3rem;
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 9.6px;
+    margin-top: -48px;
 
     @media screen and (min-width: 768px) {
       margin-left: 15%;

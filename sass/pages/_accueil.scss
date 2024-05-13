@@ -4,9 +4,9 @@
   @include strongshadow;
   position: absolute;
   z-index: 1;
-  gap: 1.20rem;
+  gap: 19.2px;
   width: 100%;
-  height: 3.125rem;
+  height: 50px;
   background-color: $lightgrey-color;
 
   i {
@@ -22,34 +22,34 @@
 /** Présentation courte de la start up**/
 .presentation {
   background-color: $cleargrey-color;
-  padding-top: 3.125rem;
-  padding-bottom: 3.8rem;
+  padding-top: 50px;
+  padding-bottom: 60.8px;
   text-align: center;
   
   &__one {
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.75rem;
-    padding: 2.5rem 2.813rem 1rem;
+    line-height: 28px;
+    padding: 40px 45px 16px;
   }
   &__two {
     font-size: 1.125rem;
     font-weight: 300;
     color: $darkgrey-color;
-    line-height: 1.313rem;
-    margin-bottom: 2rem;
+    line-height: 28px;
+    margin-bottom: 32px;
   }
 
   @media screen and (min-width: 768px) {
-      padding-bottom: 2rem;
+      padding-bottom: 32px;
 
       &__one {
       font-size: 2.5rem;
-      padding: 2.5rem 2.813rem 2.2rem;
+      padding: 40px 45px 35px;
       }
 
       &__two {
-      margin-bottom: 1.5rem;
+      margin-bottom: 24px;
       }
     }
   
@@ -57,7 +57,7 @@
 
 /** Section Fonctionnement **/
 .fct__title {
-  padding: 3.25rem 1.25rem 1.8rem;
+  padding: 52px 20px 28.8px;
 
   @media screen and (min-width: 768px) {
     margin-left: 17.3%;
@@ -72,33 +72,33 @@
   
     &__order {
       @include flexcenter;
-      margin-left: 1.25rem;
+      margin-left: 20px;
       background: $purple-color;
       color: $white-color;
-      width: 1.3rem;
-      height: 1.3rem;
-      border-radius: 0.6rem;
-      margin-right: -0.7rem;
+      width: 20.8px;
+      height: 20.8px;
+      border-radius: 9.6px;
+      margin-right: -11.2px;
       z-index: 1;
       
       @media screen and (min-width: 768px) {
-        width: 1.8rem;
-        height: 1.5rem;
-        border-radius: 0.7rem;
+        width: 28.8px;
+        height: 24px;
+        border-radius: 11.2px;
       }
     }
     
     .btn {
       @include extendshadow;
       @include flex;
-      gap: 1.5rem;
+      gap: 24px;
       background: $cleargrey-color;
       color: $black-color;
       font-size: $base;
       font-weight: 500;
       width: 71%;
-      padding: 1.7rem;
-      border-radius: 1.5rem;
+      padding: 27.2px;
+      border-radius: 24px;
       cursor: pointer;
 
       @media screen and (min-width: 768px) {
