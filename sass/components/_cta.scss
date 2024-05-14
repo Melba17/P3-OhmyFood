@@ -1,11 +1,11 @@
-/** Boutons Explorer er Commander **/
+/** Boutons "Explorer" et "Commander" **/
 .cta {
     @include flexcenter;
     @include strongshadow;
     background: $gradient;
     color: $white-color;
     margin: auto;
-    height: 3.125rem;
+    height: 50px;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(.4,.1,.6,.9);
@@ -17,20 +17,10 @@
     }
 
     &__one {
-        width: 58%;
+        width: 218px;
     }
     &__two {
-        width: 52%;
-    }
-    
-    /**** Media Queries ****/
-    @media screen and (min-width: 768px) {
-        &__one {
-            width: 16%;
-        }
-        &__two {
-            width: 30%;
-        }
+        width: 186px;
     }
 }
 

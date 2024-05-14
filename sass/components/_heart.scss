@@ -8,6 +8,7 @@
     transition: opacity 0.2s ease-in-out;
 }
 
+/** Coeur vide **/
 .far { 
     background-color: $black-color;
     
@@ -21,6 +22,7 @@
       }
 }
 
+/** Coeur plein **/
 .fas { 
     background-image: linear-gradient(to bottom, $purple-color, $pink-color);
     opacity: 0;
@@ -35,6 +37,8 @@
         }
       }
 }
+
+/** CHECKBOX **/
 .checkbox {
             position: absolute;
             opacity: 0;

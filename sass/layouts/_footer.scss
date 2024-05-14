@@ -6,10 +6,9 @@
         padding-left: 7%;
         padding-bottom: 5%;
         width: 90%;
-        line-height: 1.7rem;
+        line-height: 27px;
 
-        /** Media Queries pour le footer général **/
-
+        /** Media Queries **/
         @media screen and (min-width: 768px) {
             @include footer;
             padding-top: 5%;
@@ -19,7 +18,7 @@
     }
    /** Marge OhmyFood **/
     &__marge {
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
 
         @media screen and (min-width: 768px) {
             margin-bottom: 0;
@@ -66,7 +65,7 @@
         }
         .order__two {
             order: 2;
-            gap:10px;
+            gap: 10px;
         }
     }
 }

@@ -40,6 +40,7 @@
     margin-bottom: 32px;
   }
 
+  /** Media Queries**/
   @media screen and (min-width: 768px) {
       padding-bottom: 32px;
 
@@ -56,53 +57,65 @@
 }
 
 /** Section Fonctionnement **/
+/** titre "fonctionnement **/
 .fct__title {
-  padding: 52px 20px 28.8px;
-
-  @media screen and (min-width: 768px) {
-    margin-left: 17.3%;
-  }  
+  padding: 52px 20px 29px;
+  
+  @media screen and (min-width: 768px) { 
+    text-align: center;
+    margin-right: 855px;
+  }
 }
 
+/** Bloc boutons **/
 .direction {
   @include vertical;
   
+  /** centrage du numéro par rapport au bouton **/
   .choice {
   @include align;
   
+  /** centrage du numéro dans le cercle **/ 
     &__order {
       @include flexcenter;
       margin-left: 20px;
       background: $purple-color;
       color: $white-color;
-      width: 20.8px;
-      height: 20.8px;
-      border-radius: 9.6px;
+      font-size: 14px;
+      width: 23px;
+      height: 23px;
+      border-radius: 15px;
       margin-right: -11.2px;
       z-index: 1;
       
+      /** Media Queries**/
       @media screen and (min-width: 768px) {
-        width: 28.8px;
-        height: 24px;
-        border-radius: 11.2px;
+        width: 30px;
+        height: 20px;
+        border-radius: 13px;
       }
     }
     
+    /** Boutons **/
     .btn {
       @include extendshadow;
-      @include flex;
-      gap: 24px;
+      @include align;
+      gap: 20px;
       background: $cleargrey-color;
       color: $black-color;
       font-size: $base;
       font-weight: 500;
-      width: 71%;
-      padding: 27.2px;
+      width: 70%;
+      padding: 27px 30px 27px 30px;
       border-radius: 24px;
       cursor: pointer;
 
+      /** Media Queries**/
       @media screen and (min-width: 768px) {
         width: 100%;
+        padding: 24px 70px 24px 35px;
+        border-radius: 20px;
+        gap: 25px;
       }
       
       i {
@@ -120,17 +133,15 @@
 
 
  /** Paramètres section Restaurants**/
-
 .bckg {
   background-color: $cleargrey-color;
   padding: 52px 20px 72px 20px;
   
-
   @media screen and (min-width: 768px) {
-    padding: 30px 120px 30px 140px;
+    padding: 30px 0 30px 30px;
     
     .rst__title {
-      margin-left: 11%;
+      margin-left: 11.6%;
     }
   }
 }

@@ -1,40 +1,42 @@
 /** ENTÊTES page accueil et restos**/
 .header {
-  height: 3.938rem;
+  @include flexcenter;
+  position: relative;
+  height: 63PX;
   
   .logo {
-    width: 10.125rem;
-    height: 2.75rem;
-    margin-top: 0.8rem;
-  }
- 
-  &__accueil {
-    @include flexcenter;
-    @include lightshadow;
-    position: relative;
-    z-index: 2;
-  }
-  
-  &__restos {
-    @include arrow;
+    width: 162px;
+    height: 44px;
+    margin-top: 13px;
   }
 
+   /**** Media Queries ****/
+   @media screen and (min-width: 768px) {
+    .header {
+      height: 96px;
+    }
+
+    .logo {
+      width: 200px;
+      height: 34px;
+      margin-top: 0;
+    }
+  }
+ 
+  &__accueil { 
+    @include lightshadow;
+    z-index: 2;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 0;
+    padding: 17px 0 16px 17px;
+  }
+     
   i {
     color: $black-color;
   }
-  
-    /**** Media Queries ****/
-    @media screen and (min-width: 768px) {
-      .header {
-        height: 6rem;
-      }
-
-      .logo {
-        width: 12.5rem;
-        height: 2.138rem;
-        margin-top: 0;
-      }
-    }
 
 }
 

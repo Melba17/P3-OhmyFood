@@ -1,5 +1,5 @@
 
-/** Paramètres généraux **/
+/** Mixins réutilisées à plusieurs reprises **/
 @mixin display {
     display: flex;
 }
@@ -17,6 +17,10 @@
     display: flex;
     align-items: center;
 }
+@mixin symbol {
+    display: flex;
+    justify-content: space-between;
+}
 
 @mixin photos {
     object-fit: cover;
@@ -31,34 +35,20 @@
     align-items: center;
     gap: 80px;
 }
-/** ENTÊTE **/
-@mixin arrow {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 24px; 
-    gap: 18%;
 
-    @media screen and (min-width: 768px) {
-        gap: 41%;
-    }
-}
 /** Accueil - Fonctionnement **/
-@mixin flex {
-    display: flex;
-    align-items: baseline;
-}
 @mixin vertical {
     display: flex;
     flex-direction: column;
-    margin-bottom: 48px;
-    gap: 24px;
+    margin-bottom: 55px;
+    gap: 20px;
 
     @media screen and (min-width: 768px) {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 4.8px;
+        margin-bottom: 50px;
+        gap: 0;
     }
 }
 
@@ -89,11 +79,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-/** alignement texte et coeur de la card**/
-@mixin symbol {
-    display: flex;
-    justify-content: space-between;
 }
 
 /** FOOTER **/

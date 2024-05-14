@@ -32,12 +32,14 @@
   
       /** Style des 3 ronds **/
       &__element {
+        /** Superposition des 3 ronds **/
         position: absolute;
         border-radius: 100%;
         border: 30px solid;
         margin-left: -30px;
         margin-top: -40px;
       
+        /** Media Queries**/
         @media screen and (min-width: 768px) {
           margin-top: -50px;
           border: 40px solid;
