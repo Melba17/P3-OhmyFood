@@ -7,6 +7,7 @@
         width: 100%;
         background: $white-color;
         border-radius: 16px;
+        @include extralightshadow;
         
 
         @media screen and (min-width: 768px) {

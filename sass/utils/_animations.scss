@@ -1,10 +1,11 @@
 /** Keyframes LOADER **/
+/** taille des ronds **/
 @keyframes loader {
     100% { 
       transform: scale(2); 
     }
   }
-  
+/** apparence le temps de visibilité du loader **/ 
 @keyframes visibilité {
     90% {
         opacity: 1;
@@ -14,7 +15,7 @@
     }
   }
 
-/** Keyframes Blocs Menu **/
+/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
 @keyframes menu {
   from {
     transform: scale(0);

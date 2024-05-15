@@ -11,6 +11,7 @@
   }
 
 /** Fond global **/
+/** Superposition par rapport à l'image parce que le conteneur "bckg__restos" apparaît après l'image dans le code HTML, ce qui lui donne une position visuelle supérieure dans le flux du document, et aussi grâce à l'emploi de "position: relative;", même sans l'utilisation explicite de z-index. **/
 .bckg__restos {
     @include flexcolumn;
     @include restos;
@@ -45,16 +46,20 @@
     margin-bottom: 14.4px;
 }
 
-/** Animation bloc menu **/
+/** Animation titre et blocs menus qui apparaissent les uns après les autres au chargement de la page grâce à une Keyframe **/
+/** Titre **/
 .box {
   animation: menu 1.5s 100ms both;
 }
+/** Entrées **/
 .box__one {
   animation: menu 1.5s 150ms both; 
 }
+/** Plats **/
 .box__two {
   animation: menu 1.5s 300ms both; 
 }
+/** Desserts **/
 .box__three {
   animation: menu 1.5s 450ms both; 
 }
@@ -80,16 +85,7 @@
         width: 290px;
         transition: all .3s ease-in-out;
 
-        &:active {
-          width: 190px;
-        }
-        /** Media Queries **/
-        @media screen and (min-width: 768px) {
-          &:hover {
-            width: 300px;
-          }
-        }
-
+        
         /** Paramètres de chaque ligne **/
         &--one {
           @include points;
@@ -149,24 +145,30 @@
           background-color: $white-color;
         }
       
-        /** couleur de l'icône de la languette **/
+        /** couleur de la coche **/
         i {
           color: $green-color;
         }
       }
 
-      /** Animation des languettes vertes avec coche qui apparaissent et qui disparaissent au clic ou au survol **/
+      /** Enchaînement d'animations de la droite vers la gauche: au clic sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
       &:active {
+        /** languette verte avec coche **/
         & > .vignette__bar {
           transform: scaleX(1);
           opacity: 1; 
         }
+        /** Prix **/
         & > .vignette__price {
         transform: translateX(-65px);
         }
+        /** Points de suspension **/
+        & > .vignette__points {
+          width: 190px;
+        }
       }
-       
-      /** Media Queries**/
+
+      /** Media Queries - Même chose au survol**/
       @media screen and (min-width: 768px) {
             &:hover {
               & > .vignette__bar {
@@ -175,7 +177,10 @@
               }
               & > .vignette__price {
                   transform: translateX(-50px);
-              }   
+              }
+              & > .vignette__points {
+                width: 300px;
+              }
             }
       }        
     

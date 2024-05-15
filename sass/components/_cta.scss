@@ -1,24 +1,47 @@
-/** Boutons "Explorer" et "Commander" **/
+/** Boutons page accueil et restos **/
+/** Aspect de base **/
 .cta {
     @include flexcenter;
     @include strongshadow;
+    position: relative;
     background: $gradient;
     color: $white-color;
     margin: auto;
     height: 50px;
     border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(.4,.1,.6,.9);
+    z-index: 1;
     
-    &:hover,
-    &:active {
-        background: $light-gradient;
+    &:active,
+    &:hover {
+        /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/
+        &::after {
+        opacity: 1;
         @include extrashadow;
+        }
     }
+/** Création d'un pseudo-élément quasiment pareil que le ".cta" si ce n'est que la couleur du background change pour s'éclaircir / pour l'instant celui-ci est invisible  grâce l'opacity en 0, mais il est positionné exactement au même endroit que le cta grâce à "position: absolute" et les différntes directions en 0. Il se situe en sous-couche avec "z-index: -1;" **/
+    &::after {
+        content: "";
+        border-radius: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $light-gradient;
+        opacity: 0;
+        z-index: -1;
+        /** "all" pour prendre en compte l'opacité et la mixin concernant l'ombre portée lors de l'activation des pseudo-classes :active et :hover situées au-dessus. Cette animation dure 300ms. Le cubic-bezier vient personnaliser 
+        la vitesse en début (x1 y1) et fin d'animation (x2 y2, sur une courbe de graphique). **/ 
+        transition: all 0.3s cubic-bezier(.4,.1,.6,.9);
 
+    }
+    /** Taille bouton page accueil **/
     &__one {
         width: 218px;
     }
+    /** Taille bouton pages restos **/
     &__two {
         width: 186px;
     }

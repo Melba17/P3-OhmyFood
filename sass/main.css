@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*****Appel des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
+/***** Appels des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
 /* Réinitialisation des marges navigateurs */
 * {
   margin: 0;
@@ -7,11 +7,18 @@
 }
 
 /** Fonts du site **/
-/** Font-size **/
+/** Font de base **/
+/** Font se rapportant au logo **/
+/** Font-size de base **/
 /** Charte des Couleurs pour l'ensemble du site **/
 /**Couleurs principales**/
+/** Primaire **/
+/** Secondaire **/
+/** Tertiaire **/
 /**Autres Couleurs **/
 /** Couleurs de CTA **/
+/** Couleurs de base du bouton avec pourcentage de pénétration de la couleur rose vers la couleur violette **/
+/** Couleurs au clic ou au survol **/
 /** Mixins réutilisées à plusieurs reprises **/
 /** LOADER **/
 /** Accueil - Fonctionnement **/
@@ -23,12 +30,15 @@
 /** Vignettes pages restaurants**/
 /** Pour couper le texte à l'aide de 3 petits points **/
 /** Ombres Portées **/
+/** décalage horizontal/décalage vertical/floutage/extension et couleur **/
 /** Keyframes LOADER **/
+/** taille des ronds **/
 @keyframes loader {
   100% {
     transform: scale(2);
   }
 }
+/** apparence le temps de visibilité du loader **/
 @keyframes visibilité {
   90% {
     opacity: 1;
@@ -37,7 +47,7 @@
     opacity: 0;
   }
 }
-/** Keyframes Blocs Menu **/
+/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
 @keyframes menu {
   from {
     transform: scale(0);
@@ -80,23 +90,46 @@ a {
   text-decoration: none;
 }
 
-/** Boutons "Explorer" et "Commander" **/
+/** Boutons page accueil et restos **/
+/** Aspect de base **/
 .cta {
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2509803922);
+  position: relative;
   background: linear-gradient(to bottom, #ff79da, #9356dc 97%);
   color: #ffffff;
   margin: auto;
   height: 50px;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  z-index: 1;
+  /** Création d'un pseudo-élément quasiment pareil que le ".cta" si ce n'est que la couleur du background change pour s'éclaircir / pour l'instant celui-ci est invisible  grâce l'opacity en 0, mais il est positionné exactement au même endroit que le cta grâce à "position: absolute" et les différntes directions en 0. Il se situe en sous-couche avec "z-index: -1;" **/
+  /** Taille bouton page accueil **/
+  /** Taille bouton pages restos **/
 }
-.cta:hover, .cta:active {
-  background: linear-gradient(to bottom, #ff93e1, #a16be0 97%);
+.cta:active, .cta:hover {
+  /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/
+}
+.cta:active::after, .cta:hover::after {
+  opacity: 1;
   box-shadow: 0px 7px 7px 2px rgba(0, 0, 0, 0.2509803922);
+}
+.cta::after {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #ff93e1, #a16be0 97%);
+  opacity: 0;
+  z-index: -1;
+  /** "all" pour prendre en compte l'opacité et la mixin concernant l'ombre portée lors de l'activation des pseudo-classes :active et :hover situées au-dessus. Cette animation dure 300ms. Le cubic-bezier vient personnaliser 
+  la vitesse en début (x1 y1) et fin d'animation (x2 y2, sur une courbe de graphique). **/
+  transition: all 0.3s cubic-bezier(0.4, 0.1, 0.6, 0.9);
 }
 .cta__one {
   width: 218px;
@@ -105,63 +138,17 @@ a {
   width: 186px;
 }
 
-/** Paramètres généraux des coeurs **/
-.fa__base {
-  position: absolute;
-  font-size: 25px;
-  color: transparent;
-  background-clip: text;
-  cursor: pointer;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/** Coeur vide **/
-.far {
-  background-color: #000000;
-}
-.far:active {
-  opacity: 0;
-}
-@media screen and (min-width: 768px) {
-  .far:hover {
-    opacity: 0;
-  }
-}
-
-/** Coeur plein **/
-.fas {
-  background-image: linear-gradient(to bottom, #9356dc, #ff79da);
-  opacity: 0;
-}
-.fas:active {
-  opacity: 1;
-}
-@media screen and (min-width: 768px) {
-  .fas:hover {
-    opacity: 1;
-  }
-}
-
-/** CHECKBOX **/
-.checkbox {
-  position: absolute;
-  opacity: 0;
-}
-
-/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-input[type=checkbox]:checked ~ .fas {
-  opacity: 1;
-}
-
+/** Alignement texte et coeur **/
 .container__two {
   display: flex;
   justify-content: space-between;
 }
 
+/** Conteneur parent de référence pour le positionnement des coeurs, avec "position : relative;" **/
 .carre {
   cursor: pointer;
   position: relative;
-  /** Coeur pages accueil / cards **/
+  /** Postionnement des coeurs page accueil/cards **/
   /** Coeur pages restaurants **/
 }
 .carre__heart {
@@ -171,6 +158,69 @@ input[type=checkbox]:checked ~ .fas {
 .carre__myheart {
   margin-top: 7px;
   margin-left: 20px;
+}
+
+/** Paramètres généraux des coeurs **/
+.fa__base {
+  /** Positionnement spécifique des coeurs en fonction de leur conteneur parent ".carre" **/
+  position: absolute;
+  font-size: 23px;
+  /** on rend l'icône et sa couleur d'origine invisibles **/
+  color: transparent;
+  /** le caractère/élément coeur n'est visible que dans la limite de la taille définie juste au-dessus **/
+  background-clip: text;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/** Coeur vide **/
+.far {
+  /** Ajout de la couleur voulue au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/
+  background-color: #000000;
+}
+.far:active {
+  /** devient complètement invisible au clic... **/
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .far {
+    /** ...ou au survol. **/
+  }
+  .far:hover {
+    opacity: 0;
+  }
+}
+
+/** Coeur plein **/
+.fas {
+  /** Ajout du dégradé voulu au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/
+  background-image: linear-gradient(to bottom, #9356dc, #ff79da);
+  /** pour l'instant invisible... **/
+  opacity: 0;
+}
+.fas:active {
+  /** ...mais devient visible au clic, **/
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .fas {
+    /** ...ou au survol. **/
+  }
+  .fas:hover {
+    opacity: 1;
+  }
+}
+
+/** CHECKBOX **/
+.checkbox {
+  /** positionnement de la checkbox au même endroit que les coeurs, en fonction du conteneur parent ".carre", mais celle-ci est invisible **/
+  position: absolute;
+  opacity: 0;
+}
+
+/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+input[type=checkbox]:checked ~ .fas {
+  opacity: 1;
 }
 
 /** Section Restaurants **/
@@ -194,6 +244,7 @@ input[type=checkbox]:checked ~ .fas {
   width: 100%;
   background: #ffffff;
   border-radius: 16px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1490196078);
   /** style pour la carte **/
 }
 @media screen and (min-width: 768px) {
@@ -253,7 +304,7 @@ input[type=checkbox]:checked ~ .fas {
   margin-right: 30px;
 }
 
-/** Alignement vertical des 2 blocs du loader **/
+/** Alignement vertical du titre et des points superposés **/
 .middle {
   display: flex;
   flex-direction: column;
@@ -267,12 +318,12 @@ input[type=checkbox]:checked ~ .fas {
   background-color: #353535;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  position: fixed;
+  pointer-events: none; /** aucun clic ou autre évènement possible pendant l'animation du loader **/
+  position: fixed; /** à partir du haut à gauche,l'élément reste fixe à la même position dans la fenêtre du navigateur, même lorsque l'utilisateur fait défiler la page pendant l'animation du loader **/
   top: 0px;
   left: 0px;
-  z-index: 100000;
-  animation: visibilité 0.1s ease forwards;
+  z-index: 10; /** positionné de manière invisible en surcouche **/
+  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle avec "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -298,8 +349,11 @@ input[type=checkbox]:checked ~ .fas {
   margin-left: -30px;
   margin-top: -40px;
   /** Media Queries**/
-  /** Rappel de la charte graphique du site **/
-  /** Animation des 3 ronds **/
+  /** Rappel de la charte graphique du site sur chaque rond **/
+  /******** Animation des 3 ronds ********/
+  /** Le premier rond violet (1) utilise la keyframe "loader" qui le fait grossir progressivement pour atteindre 200% de sa taille lorsqu'on est à 100% de l'animation, c'est à dire que l'action se déroule sur 600ms. Ce mouvement se fait de manière alterné avec "alternate", c'est à dire qu'il grossit puis diminue de taille avant de grossir à nouveau etc... Cela crée une sorte d'aller-retour du mouvement. L'animation commence lentement puis accélère pour à nouveau ralentir avec "ease-in-out", l'action est donc plus douce en début et en fin d'action et ceci est répété à l'infini avec "infinite". L'animation est donc constante et fluide pendant la durée de visibilité du loader **/
+  /** Même chose pour le rond rose (2) mais avec 200ms de décalage **/
+  /** Même chose pour le rond vert (3) mais avec 400ms de décalage **/
 }
 @media screen and (min-width: 768px) {
   .loader__element {
@@ -309,13 +363,13 @@ input[type=checkbox]:checked ~ .fas {
   }
 }
 .loader__element--1 {
-  color: #9356dc;
+  color: #99e2d0; /** Couleur primaire **/
 }
 .loader__element--2 {
-  color: #ff79da;
+  color: #ff79da; /** Couleur secondaire **/
 }
 .loader__element--3 {
-  color: #99e2d0;
+  color: #9356dc; /** Couleur tertiaire **/
 }
 .loader__element:nth-child(1) {
   animation: loader 0.6s ease-in-out alternate infinite;
@@ -362,6 +416,78 @@ input[type=checkbox]:checked ~ .fas {
 }
 .header i {
   color: #000000;
+}
+
+.footer {
+  background-color: #353535;
+  /** Marge OhmyFood **/
+  /** couleur icônes **/
+  /** espace entre icônes et caractères **/
+  /** Couleur générale des caractères **/
+  /** Différentes graisses pour les 2 dernières rubriques **/
+  /** Media Queries pour le sens et l'ordre des différents blocs **/
+}
+.footer__width {
+  padding-top: 7%;
+  padding-left: 7%;
+  padding-bottom: 5%;
+  width: 90%;
+  line-height: 27px;
+  /** Media Queries **/
+}
+@media screen and (min-width: 768px) {
+  .footer__width {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 5%;
+    padding-left: 6%;
+    padding-bottom: 2%;
+  }
+}
+.footer__marge {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .footer__marge {
+    margin-bottom: 0;
+    margin-left: 100px;
+  }
+}
+.footer__marge .shrinkhand {
+  font-family: "Shrikhand", serif;
+  font-size: 1.125rem;
+}
+.footer i {
+  color: #ffffff;
+}
+.footer .icon {
+  display: flex;
+  gap: 11.2px;
+}
+.footer .color {
+  color: #ffffff;
+}
+.footer .weight__one {
+  font-weight: 500;
+}
+.footer .weight__two {
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .footer .footer__two {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+  }
+  .footer .order__one {
+    order: 1;
+    gap: 17px;
+    margin-left: 50px;
+  }
+  .footer .order__two {
+    order: 2;
+    gap: 10px;
+  }
 }
 
 /** Bannière de Localisation **/
@@ -477,6 +603,7 @@ input[type=checkbox]:checked ~ .fas {
   }
 }
 .direction .choice .btn {
+  /** rouge/vert/bleu et opacité de la couleur, ici, 15% **/
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   display: flex;
   align-items: center;
@@ -488,7 +615,6 @@ input[type=checkbox]:checked ~ .fas {
   width: 70%;
   padding: 27px 30px 27px 30px;
   border-radius: 24px;
-  cursor: pointer;
   /** Media Queries**/
 }
 @media screen and (min-width: 768px) {
@@ -516,80 +642,8 @@ input[type=checkbox]:checked ~ .fas {
   .bckg {
     padding: 30px 0 30px 30px;
   }
-  .bckg .rst__title {
-    margin-left: 11.6%;
-  }
-}
-
-.footer {
-  background-color: #353535;
-  /** Marge OhmyFood **/
-  /** couleur icônes **/
-  /** espace entre icônes et caractères **/
-  /** Couleur générale des caractères **/
-  /** Différentes graisses pour les 2 dernières rubriques **/
-  /** Media Queries pour le sens et l'ordre des différents blocs **/
-}
-.footer__width {
-  padding-top: 7%;
-  padding-left: 7%;
-  padding-bottom: 5%;
-  width: 90%;
-  line-height: 27px;
-  /** Media Queries **/
-}
-@media screen and (min-width: 768px) {
-  .footer__width {
-    display: flex;
-    flex-direction: row-reverse;
-    padding-top: 5%;
-    padding-left: 6%;
-    padding-bottom: 2%;
-  }
-}
-.footer__marge {
-  margin-bottom: 16px;
-}
-@media screen and (min-width: 768px) {
-  .footer__marge {
-    margin-bottom: 0;
-    margin-left: 100px;
-  }
-}
-.footer__marge .shrinkhand {
-  font-family: "Shrikhand", serif;
-  font-size: 1.125rem;
-}
-.footer i {
-  color: #ffffff;
-}
-.footer .icon {
-  display: flex;
-  gap: 11.2px;
-}
-.footer .color {
-  color: #ffffff;
-}
-.footer .weight__one {
-  font-weight: 500;
-}
-.footer .weight__two {
-  font-weight: 400;
-}
-@media screen and (min-width: 768px) {
-  .footer .footer__two {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
-  }
-  .footer .order__one {
-    order: 1;
-    gap: 17px;
-    margin-left: 50px;
-  }
-  .footer .order__two {
-    order: 2;
-    gap: 10px;
+  .bckg .resto__title {
+    margin-left: 11%;
   }
 }
 
@@ -608,6 +662,7 @@ input[type=checkbox]:checked ~ .fas {
 }
 
 /** Fond global **/
+/** Superposition par rapport à l'image parce que le conteneur "bckg__restos" apparaît après l'image dans le code HTML, ce qui lui donne une position visuelle supérieure dans le flux du document, et aussi grâce à l'emploi de "position: relative;", même sans l'utilisation explicite de z-index. **/
 .bckg__restos {
   display: flex;
   flex-direction: column;
@@ -656,19 +711,23 @@ input[type=checkbox]:checked ~ .fas {
   margin-bottom: 14.4px;
 }
 
-/** Animation bloc menu **/
+/** Animation titre et blocs menus qui apparaissent les uns après les autres au chargement de la page grâce à une Keyframe **/
+/** Titre **/
 .box {
   animation: menu 1.5s 100ms both;
 }
 
+/** Entrées **/
 .box__one {
   animation: menu 1.5s 150ms both;
 }
 
+/** Plats **/
 .box__two {
   animation: menu 1.5s 300ms both;
 }
 
+/** Desserts **/
 .box__three {
   animation: menu 1.5s 450ms both;
 }
@@ -677,6 +736,7 @@ input[type=checkbox]:checked ~ .fas {
 .vignette {
   display: flex;
   justify-content: space-between;
+  /** rouge/vert/bleu et opacité de la couleur, ici, 15% **/
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   background: #ffffff;
   color: #000000;
@@ -687,8 +747,8 @@ input[type=checkbox]:checked ~ .fas {
   /** On coupe le texte à l'aide de 3 petits points lorsque c'est nécessaire **/
   /** Paramètres du prix affiché **/
   /** Paramètres de languette verte **/
-  /** Animation des languettes vertes avec coche qui apparaissent et qui disparaissent au clic ou au survol **/
-  /** Media Queries**/
+  /** Enchaînement d'animations de la droite vers la gauche: au clic sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
+  /** Media Queries - Même chose au survol**/
 }
 .vignette:not(:last-child) {
   margin-bottom: 12px;
@@ -699,16 +759,7 @@ input[type=checkbox]:checked ~ .fas {
   overflow: hidden;
   width: 290px;
   transition: all 0.3s ease-in-out;
-  /** Media Queries **/
   /** Paramètres de chaque ligne **/
-}
-.vignette__points:active {
-  width: 190px;
-}
-@media screen and (min-width: 768px) {
-  .vignette__points:hover {
-    width: 300px;
-  }
 }
 .vignette__points--one {
   text-overflow: ellipsis;
@@ -753,7 +804,7 @@ input[type=checkbox]:checked ~ .fas {
   transition: all 0.3s ease-in-out;
   /** Media Queries**/
   /** Paramètres de la coche **/
-  /** couleur de l'icône de la languette **/
+  /** couleur de la coche **/
 }
 @media screen and (min-width: 768px) {
   .vignette .vignette__bar {
@@ -774,12 +825,20 @@ input[type=checkbox]:checked ~ .fas {
 .vignette .vignette__bar i {
   color: #99e2d0;
 }
+.vignette:active {
+  /** languette verte avec coche **/
+  /** Prix **/
+  /** Points de suspension **/
+}
 .vignette:active > .vignette__bar {
   transform: scaleX(1);
   opacity: 1;
 }
 .vignette:active > .vignette__price {
   transform: translateX(-65px);
+}
+.vignette:active > .vignette__points {
+  width: 190px;
 }
 @media screen and (min-width: 768px) {
   .vignette:hover > .vignette__bar {
@@ -788,5 +847,8 @@ input[type=checkbox]:checked ~ .fas {
   }
   .vignette:hover > .vignette__price {
     transform: translateX(-50px);
+  }
+  .vignette:hover > .vignette__points {
+    width: 300px;
   }
 }/*# sourceMappingURL=main.css.map */

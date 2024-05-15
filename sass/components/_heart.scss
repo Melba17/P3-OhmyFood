@@ -1,62 +1,14 @@
-/** Paramètres généraux des coeurs **/
-.fa__base {
-    position: absolute;
-    font-size: 25px;
-    color: transparent;
-    background-clip: text;
-    cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
-}
-
-/** Coeur vide **/
-.far { 
-    background-color: $black-color;
-    
-    &:active {
-        opacity: 0;
-    }
-    @media screen and (min-width: 768px) {
-        &:hover {
-            opacity: 0;
-        }
-      }
-}
-
-/** Coeur plein **/
-.fas { 
-    background-image: linear-gradient(to bottom, $purple-color, $pink-color);
-    opacity: 0;
-    
-
-    &:active {
-        opacity: 1;
-    }
-    @media screen and (min-width: 768px) {
-        &:hover {
-            opacity: 1;
-        }
-      }
-}
-
-/** CHECKBOX **/
-.checkbox {
-            position: absolute;
-            opacity: 0;
-        }
-/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
-input[type="checkbox"]:checked ~ .fas {
-opacity: 1;
-}
-
+/** Alignement texte et coeur **/
 .container__two {
     @include symbol;
 }
 
+/** Conteneur parent de référence pour le positionnement des coeurs, avec "position : relative;" **/ 
 .carre {
     cursor: pointer;
     position: relative;
     
-            /** Coeur pages accueil / cards **/
+            /** Postionnement des coeurs page accueil/cards **/
         &__heart {
             margin-top: 20px;
             margin-right: 45px;
@@ -68,6 +20,69 @@ opacity: 1;
             margin-left: 20px;
         }    
 }
+
+/** Paramètres généraux des coeurs **/
+.fa__base {
+/** Positionnement spécifique des coeurs en fonction de leur conteneur parent ".carre" **/
+    position: absolute;
+    font-size: 23px;
+    /** on rend l'icône et sa couleur d'origine invisibles **/
+    color: transparent;
+    /** le caractère/élément coeur n'est visible que dans la limite de la taille définie juste au-dessus **/
+    background-clip: text;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/** Coeur vide **/
+.far {
+    /** Ajout de la couleur voulue au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/ 
+    background-color: $black-color;
+    
+    &:active {
+        /** devient complètement invisible au clic... **/
+        opacity: 0;
+    }
+    @media screen and (min-width: 768px) {
+        /** ...ou au survol. **/
+        &:hover {
+            opacity: 0;
+        }
+      }
+}
+
+/** Coeur plein **/
+.fas { 
+    /** Ajout du dégradé voulu au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/ 
+    background-image: linear-gradient(to bottom, $purple-color, $pink-color);
+    /** pour l'instant invisible... **/
+    opacity: 0;
+    
+
+    &:active {
+        /** ...mais devient visible au clic, **/
+        opacity: 1;
+    }
+    @media screen and (min-width: 768px) {
+        /** ...ou au survol. **/
+        &:hover {
+            opacity: 1;
+        }
+      }
+}
+
+/** CHECKBOX **/
+.checkbox {
+    /** positionnement de la checkbox au même endroit que les coeurs, en fonction du conteneur parent ".carre", mais celle-ci est invisible **/
+            position: absolute;
+            opacity: 0;
+        }
+/** lorsque la checkbox est cochée, cela affiche l'icône coeur plein / les 2 sont donc reliés **/
+input[type="checkbox"]:checked ~ .fas {
+opacity: 1;
+}
+
+
 
   
         

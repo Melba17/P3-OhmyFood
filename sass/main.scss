@@ -1,4 +1,4 @@
-/*****Appel des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
+/***** Appels des différentes pages scss du projet pour un bon fonctionnement de l'ensemble du site *****/
 @import "./base/reset";
 @import "./utils/variables";
 @import "./utils/mixins";
@@ -8,9 +8,9 @@
 @import "./components/heart";
 @import "./components/card";
 @import "./components/loader";
-@import "./layouts/header";
+@import "./modules/header";
+@import "./modules/footer";
 @import "./pages/accueil";
-@import "./layouts/footer";
 @import "./pages/restos";
 
 

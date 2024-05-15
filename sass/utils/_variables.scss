@@ -1,18 +1,18 @@
 /** Fonts du site **/
-$text-font: "Roboto", sans-serif;
-$title-font: "Shrikhand", serif;
+$text-font: "Roboto", sans-serif; /** Font de base **/
+$title-font: "Shrikhand", serif; /** Font se rapportant au logo **/
 
 
-/** Font-size **/
+/** Font-size de base **/
 $base: 1rem;
 
 /** Charte des Couleurs pour l'ensemble du site **/
 /**Couleurs principales**/
-$purple-color: #9356dc;
+$purple-color: #9356dc; /** Primaire **/
 $light-purple-color: lighten($purple-color, 5%);
-$pink-color: #ff79da;
+$pink-color: #ff79da; /** Secondaire **/
 $light-pink-color: lighten($pink-color, 5%);
-$green-color: #99e2d0;
+$green-color: #99e2d0; /** Tertiaire **/
 
 /**Autres Couleurs **/
 $white-color: #ffffff;
@@ -25,5 +25,7 @@ $mediumgrey-color: #7e7e7e;
 $darkgrey-color: #353535;
 
 /** Couleurs de CTA **/
+/** Couleurs de base du bouton avec pourcentage de pénétration de la couleur rose vers la couleur violette **/
 $gradient: linear-gradient(to bottom, $pink-color, $purple-color 97%);
+/** Couleurs au clic ou au survol **/
 $light-gradient: linear-gradient(to bottom, $light-pink-color, $light-purple-color 97%);
