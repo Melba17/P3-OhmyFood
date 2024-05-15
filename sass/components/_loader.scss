@@ -13,7 +13,7 @@
   top: 0px; 
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle avec "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
 
         /** Style du titre **/
         &__title {
@@ -48,13 +48,13 @@
         
       /** Rappel de la charte graphique du site sur chaque rond **/
         &--1 {
-          color: $green-color; /** Couleur primaire **/
+          color: $purple-color; /** Couleur primaire **/
         }
         &--2 {
           color: $pink-color; /** Couleur secondaire **/
         }
         &--3 {
-          color: $purple-color; /** Couleur tertiaire **/
+          color: $green-color; /** Couleur tertiaire **/
         }
 
         /******** Animation des 3 ronds ********/

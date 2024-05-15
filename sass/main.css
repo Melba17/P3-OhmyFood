@@ -323,7 +323,7 @@ input[type=checkbox]:checked ~ .fas {
   top: 0px;
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle avec "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -363,13 +363,13 @@ input[type=checkbox]:checked ~ .fas {
   }
 }
 .loader__element--1 {
-  color: #99e2d0; /** Couleur primaire **/
+  color: #9356dc; /** Couleur primaire **/
 }
 .loader__element--2 {
   color: #ff79da; /** Couleur secondaire **/
 }
 .loader__element--3 {
-  color: #9356dc; /** Couleur tertiaire **/
+  color: #99e2d0; /** Couleur tertiaire **/
 }
 .loader__element:nth-child(1) {
   animation: loader 0.6s ease-in-out alternate infinite;
