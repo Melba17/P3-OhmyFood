@@ -151,39 +151,36 @@
         }
       }
 
-      /** Enchaînement d'animations de la droite vers la gauche: au clic sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
+      /** Enchaînement d'animations de la droite vers la gauche: au clic ou au survol sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
+
       &:active {
-        /** languette verte avec coche **/
         & > .vignette__bar {
           transform: scaleX(1);
           opacity: 1; 
         }
-        /** Prix **/
         & > .vignette__price {
-        transform: translateX(-65px);
+            transform: translateX(-65px);
         }
-        /** Points de suspension **/
         & > .vignette__points {
           width: 190px;
         }
-      }
+      }      
 
-      /** Media Queries - Même chose au survol**/
-      @media screen and (min-width: 768px) {
-            &:hover {
-              & > .vignette__bar {
+       /** Media Queries - Même chose au survol**/
+       @media screen and (min-width: 768px) {
+          &:hover {
+            & > .vignette__bar {
                 transform: scaleX(1);
                 opacity: 1; 
-              }
-              & > .vignette__price {
-                  transform: translateX(-50px);
-              }
-              & > .vignette__points {
-                width: 300px;
-              }
             }
-      }        
-    
+            & > .vignette__price {
+                transform: translateX(-50px);
+            }
+            & > .vignette__points {
+                width: 300px;
+            }
+          }      
+        }
 }
 
 

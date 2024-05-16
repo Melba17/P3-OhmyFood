@@ -640,7 +640,7 @@ input[type=checkbox]:checked ~ .fas {
 }
 @media screen and (min-width: 768px) {
   .bckg {
-    padding: 30px 0 30px 30px;
+    padding: 30px 0 30px 34px;
   }
   .bckg .resto__title {
     margin-left: 11%;
@@ -747,7 +747,7 @@ input[type=checkbox]:checked ~ .fas {
   /** On coupe le texte à l'aide de 3 petits points lorsque c'est nécessaire **/
   /** Paramètres du prix affiché **/
   /** Paramètres de languette verte **/
-  /** Enchaînement d'animations de la droite vers la gauche: au clic sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
+  /** Enchaînement d'animations de la droite vers la gauche: au clic ou au survol sur la vignette, la languette verte contenant la coche apparaît, poussant le prix et faisant disparaître la longueur des textes qui sont, eux, remplacés par les points de suspension **/
   /** Media Queries - Même chose au survol**/
 }
 .vignette:not(:last-child) {
@@ -824,11 +824,6 @@ input[type=checkbox]:checked ~ .fas {
 }
 .vignette .vignette__bar i {
   color: #99e2d0;
-}
-.vignette:active {
-  /** languette verte avec coche **/
-  /** Prix **/
-  /** Points de suspension **/
 }
 .vignette:active > .vignette__bar {
   transform: scaleX(1);
