@@ -223,53 +223,55 @@ input[type=checkbox]:checked ~ .fas {
   opacity: 1;
 }
 
+/** Paramètres section Restaurants**/
+.bckg {
+  background-color: #F6F6F6;
+  padding: 52px 20px 72px 20px;
+  /** Media Queries **/
+}
+@media screen and (min-width: 768px) {
+  .bckg {
+    padding: 30px 10.7% 30px 10.7%;
+  }
+}
+
 /** Section Restaurants **/
 .cards {
-  display: flex;
-  flex-direction: column;
-  gap: 19.2px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 18px;
   margin-top: 24px;
-  /** taille pour la balise <a> qui enveloppe la carte**/
 }
 @media screen and (min-width: 768px) {
   .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 24px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 50px 100px;
   }
 }
-.cards .width {
-  width: 100%;
+.cards .card {
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1490196078);
   /** style pour la carte **/
-}
-@media screen and (min-width: 768px) {
-  .cards .width {
-    width: 35%;
-  }
-}
-.cards .width .card {
   /** style pour l'étiquette **/
   /** style pour le texte**/
 }
-.cards .width .card .container__one {
+.cards .card .container__one {
   display: flex;
   justify-content: flex-end;
 }
-.cards .width .card__img {
+.cards .card__img {
   object-fit: cover;
   object-position: center;
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 150px;
+  height: 170px;
   border-radius: 16px 16px 0 0;
 }
-.cards .width .card__label {
+.cards .card__label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,14 +287,15 @@ input[type=checkbox]:checked ~ .fas {
   font-weight: 500;
   margin-top: 4%;
   margin-right: 4%;
+  /** Media Queries **/
 }
 @media screen and (min-width: 768px) {
-  .cards .width .card__label {
+  .cards .card__label {
     margin-top: 1%;
     margin-right: 1%;
   }
 }
-.cards .width .card__txt {
+.cards .card__txt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -301,7 +304,7 @@ input[type=checkbox]:checked ~ .fas {
   font-size: 1.063rem;
   font-weight: 300;
   padding: 12.8px;
-  margin-right: 30px;
+  margin-right: 32px;
 }
 
 /** Alignement vertical du titre et des points superposés **/
@@ -323,7 +326,7 @@ input[type=checkbox]:checked ~ .fas {
   top: 0px;
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 0.2s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -439,9 +442,10 @@ input[type=checkbox]:checked ~ .fas {
   .footer__width {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 5%;
+    padding-top: 4%;
     padding-left: 6%;
     padding-bottom: 2%;
+    line-height: 20px;
   }
 }
 .footer__marge {
@@ -462,7 +466,8 @@ input[type=checkbox]:checked ~ .fas {
 }
 .footer .icon {
   display: flex;
-  gap: 11.2px;
+  align-items: center;
+  gap: 11px;
 }
 .footer .color {
   color: #ffffff;
@@ -546,105 +551,76 @@ input[type=checkbox]:checked ~ .fas {
 }
 
 /** Section Fonctionnement **/
-/** titre "fonctionnement **/
-.fct__title {
-  padding: 52px 20px 29px;
+.fct {
+  padding: 48px 30px 68px 35px;
+  /** Media Queries **/
+  /** Titre **/
+  /** Sens des boutons **/
 }
 @media screen and (min-width: 768px) {
-  .fct__title {
-    text-align: center;
-    margin-right: 820px;
+  .fct {
+    padding: 50px 10.7% 50px 10.7%;
   }
 }
-
-/** Bloc boutons **/
-.direction {
+.fct__title {
+  padding-bottom: 26px;
+}
+.fct__column {
   display: flex;
   flex-direction: column;
-  margin-bottom: 55px;
-  gap: 20px;
-  /** centrage du numéro par rapport au bouton **/
+  gap: 25px;
+  /** Media Queries **/
+  /** Paramètres de chaque bouton **/
 }
 @media screen and (min-width: 768px) {
-  .direction {
-    display: flex;
+  .fct__column {
     flex-direction: row;
-    justify-content: center;
-    margin-bottom: 50px;
-    gap: 0;
+    gap: 40px;
   }
 }
-.direction .choice {
+.fct__column .fct__btn {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  /** centrage du numéro dans le cercle **/
-  /** Boutons **/
+  /** rouge/vert/bleu et opacité de la couleur, ici, 15% **/
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  padding: 24px 0px 24px 30px;
+  border-radius: 18px;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: #F6F6F6;
+  /** Couleurs et animations des boutons **/
+  /** Media Queries **/
+  /** Paramètres de chaque numéro **/
 }
-.direction .choice__order {
+.fct__column .fct__btn i {
+  color: #7e7e7e;
+  margin-right: 20px;
+}
+.fct__column .fct__btn:active i {
+  color: #9356dc;
+}
+@media screen and (min-width: 768px) {
+  .fct__column .fct__btn {
+    padding: 24px 10px 24px 30px;
+    width: 300px;
+  }
+  .fct__column .fct__btn:hover i {
+    color: #9356dc;
+  }
+}
+.fct__column .fct__btn .fct__number {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
-  background: #9356dc;
-  color: #ffffff;
-  font-size: 14px;
-  width: 23px;
-  height: 23px;
-  border-radius: 15px;
-  margin-right: -11.2px;
-  z-index: 1;
-  /** Media Queries**/
-}
-@media screen and (min-width: 768px) {
-  .direction .choice__order {
-    width: 30px;
-    height: 20px;
-    border-radius: 13px;
-  }
-}
-.direction .choice .btn {
-  /** rouge/vert/bleu et opacité de la couleur, ici, 15% **/
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #F6F6F6;
-  color: #000000;
-  font-size: 1rem;
-  font-weight: 500;
-  width: 70%;
-  padding: 27px 30px 27px 30px;
-  border-radius: 24px;
-  /** Media Queries**/
-}
-@media screen and (min-width: 768px) {
-  .direction .choice .btn {
-    width: 100%;
-    padding: 24px 60px 24px 35px;
-    border-radius: 20px;
-    gap: 25px;
-  }
-}
-.direction .choice .btn i {
-  color: #7e7e7e;
-  transition: color 0.2s cubic-bezier(0.4, 0.1, 0.6, 0.9);
-}
-.direction .choice .btn:hover i, .direction .choice .btn:active i {
-  color: #9356dc;
-}
-
-/** Paramètres section Restaurants**/
-.bckg {
-  background-color: #F6F6F6;
-  padding: 52px 20px 72px 20px;
-}
-@media screen and (min-width: 768px) {
-  .bckg {
-    padding: 30px 5px 30px 45px;
-  }
-  .bckg .resto__title {
-    margin-left: 11%;
-  }
+  width: 22px;
+  height: 22px;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  color: white;
+  background-color: #9356dc;
+  position: absolute;
+  transform: translateX(-39px);
 }
 
 /** Taille Photo**/

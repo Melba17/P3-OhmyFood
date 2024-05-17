@@ -37,33 +37,23 @@
 }
 
 /** Accueil - Fonctionnement **/
-@mixin vertical {
+@mixin start {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 55px;
-    gap: 20px;
-
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 50px;
-        gap: 0;
-    }
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /** Accueil - Cartes Restaurants **/
 @mixin cards {
-    display: flex;
-    flex-direction: column;
-    gap: 19.2px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 18px;
     margin-top: 24px;
 
     @media screen and (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 24px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr; 
         gap: 50px 100px;
     }
     
@@ -84,7 +74,8 @@
 /** FOOTER **/
 @mixin space {
     display: flex;
-    gap: 11.2px;
+    align-items: center;
+    gap: 11px;
 }
 
 @mixin footer {
