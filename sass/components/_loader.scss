@@ -13,7 +13,7 @@
   top: 0px; 
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3s ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 3000ms ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
 
         /** Style du titre **/
         &__title {
