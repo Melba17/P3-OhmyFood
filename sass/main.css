@@ -596,6 +596,7 @@ input[type=checkbox]:checked ~ .fas {
 .fct__column .fct__btn i {
   color: #7e7e7e;
   margin-right: 20px;
+  transition: all 0.2s ease-in-out;
 }
 .fct__column .fct__btn:active i {
   color: #9356dc;
