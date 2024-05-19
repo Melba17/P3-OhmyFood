@@ -137,9 +137,10 @@
       
         /** Media Queries**/
         @media screen and (min-width: 768px) {
-         width: 10%;
+         width: 13%;
          margin-left: -35px;
         }
+        
       
          /** Paramètres de la coche **/
          &__check {
@@ -174,13 +175,9 @@
       
       /** Media Queries - Même chose au survol**/
       @media screen and (min-width: 768px) {
-        &:hover {
-          & > .vignette__bar {
-            transform: scaleX(1);
-            opacity: 1; 
-          }
+        &:active {
           & > .vignette__price {
-              transform: translateX(-4vw);
+              transform: translateX(-5.5vw);
           }
           & > .vignette__points {
             width: 220px;
@@ -189,6 +186,14 @@
       }
       @media screen and (min-width: 1024px) {
         &:hover {
+          /** remise de transform: scaleX et translateX car sinon ils ne fonctionneront qu'avec :active **/
+          & > .vignette__bar {
+            transform: scaleX(1);
+            opacity: 1; 
+          }
+          & > .vignette__price {
+              transform: translateX(-5.5vw);
+          }
           & > .vignette__points {
             width: 300px; /** obligation de mettre une width assez large pour que les points de suspension n'apparaissent plus car sinon on hérite de la width en 768px qui, elle, coupe encore le texte avec les 3 petits points **/
           }
