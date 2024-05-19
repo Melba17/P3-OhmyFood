@@ -694,6 +694,7 @@ input[type=checkbox]:checked ~ .fas {
 
 /** Paramètres Vignettes plats **/
 .vignette {
+  position: relative;
   display: flex;
   justify-content: space-between;
   /** rouge/vert/bleu et opacité de la couleur, ici, 15% **/
@@ -717,9 +718,14 @@ input[type=checkbox]:checked ~ .fas {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: 290px;
+  width: 82%;
   transition: all 0.3s ease-in-out;
   /** Paramètres de chaque ligne **/
+}
+@media screen and (min-width: 768px) {
+  .vignette__points {
+    width: 85%;
+  }
 }
 .vignette__points--one {
   text-overflow: ellipsis;
@@ -742,11 +748,12 @@ input[type=checkbox]:checked ~ .fas {
   letter-spacing: -0.4px;
 }
 .vignette__price {
+  position: absolute;
   font-size: 0.94rem;
   font-weight: 700;
   color: #353535;
   margin-top: 35px;
-  margin-left: auto;
+  right: 15px;
   transition: transform 0.3s ease-in-out;
 }
 .vignette .vignette__bar {
@@ -790,7 +797,7 @@ input[type=checkbox]:checked ~ .fas {
   opacity: 1;
 }
 .vignette:active > .vignette__price {
-  transform: translateX(-65px);
+  transform: translateX(-17vw);
 }
 .vignette:active > .vignette__points {
   width: 190px;
@@ -801,9 +808,14 @@ input[type=checkbox]:checked ~ .fas {
     opacity: 1;
   }
   .vignette:hover > .vignette__price {
-    transform: translateX(-50px);
+    transform: translateX(-4vw);
   }
   .vignette:hover > .vignette__points {
-    width: 300px;
+    width: 220px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .vignette:hover > .vignette__points {
+    width: 300px; /** obligation de mettre une width assez large pour que les points de suspension n'apparaissent plus car sinon on hérite de la width en 768px qui, elle, coupe encore le texte avec les 3 petits points **/
   }
 }/*# sourceMappingURL=main.css.map */

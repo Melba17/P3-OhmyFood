@@ -66,6 +66,7 @@
 
 /** Paramètres Vignettes plats **/
 .vignette {
+      position: relative;
       @include symbol;
       @include extendshadow;
       background: $white-color;
@@ -82,8 +83,12 @@
       /** On coupe le texte à l'aide de 3 petits points lorsque c'est nécessaire **/
        &__points {
         @include points;
-        width: 290px;
+        width: 82%;
         transition: all .3s ease-in-out;
+
+        @media screen and (min-width: 768px) {
+          width: 85%;
+        }
 
         
         /** Paramètres de chaque ligne **/
@@ -108,11 +113,12 @@
 
       /** Paramètres du prix affiché **/
       &__price {
+        position: absolute;
         font-size: 0.94rem;
         font-weight: 700;
         color: $darkgrey-color;
         margin-top: 35px;
-        margin-left: auto;
+        right: 15px;
         transition: transform .3s ease-in-out;
       }
 
@@ -159,28 +165,37 @@
           opacity: 1; 
         }
         & > .vignette__price {
-            transform: translateX(-65px);
+            transform: translateX(-17vw);
         }
         & > .vignette__points {
           width: 190px;
         }
-      }      
+      }   
+      
+      /** Media Queries - Même chose au survol**/
+      @media screen and (min-width: 768px) {
+        &:hover {
+          & > .vignette__bar {
+            transform: scaleX(1);
+            opacity: 1; 
+          }
+          & > .vignette__price {
+              transform: translateX(-4vw);
+          }
+          & > .vignette__points {
+            width: 220px;
+          }
+        }   
+      }
+      @media screen and (min-width: 1024px) {
+        &:hover {
+          & > .vignette__points {
+            width: 300px; /** obligation de mettre une width assez large pour que les points de suspension n'apparaissent plus car sinon on hérite de la width en 768px qui, elle, coupe encore le texte avec les 3 petits points **/
+          }
+        }   
+      }
 
-       /** Media Queries - Même chose au survol**/
-       @media screen and (min-width: 768px) {
-          &:hover {
-            & > .vignette__bar {
-                transform: scaleX(1);
-                opacity: 1; 
-            }
-            & > .vignette__price {
-                transform: translateX(-50px);
-            }
-            & > .vignette__points {
-                width: 300px;
-            }
-          }      
-        }
+      
 }
 
 
