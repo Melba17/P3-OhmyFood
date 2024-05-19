@@ -12,13 +12,11 @@
     cursor: pointer;
     z-index: 1;
     
-    &:active,
-    &:hover {
-        /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/
-        &::after {
+    &:active::after,
+    &:hover::after {
+        /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/   
         opacity: 1;
-        @include extrashadow;
-        }
+        @include extrashadow;   
     }
 /** Création d'un pseudo-élément quasiment pareil que le ".cta" si ce n'est que la couleur du background change pour s'éclaircir / pour l'instant celui-ci est invisible  grâce l'opacity en 0, mais il est positionné exactement au même endroit que le cta grâce à "position: absolute" et les différntes directions en 0. Il se situe en sous-couche avec "z-index: -1;" **/
     &::after {

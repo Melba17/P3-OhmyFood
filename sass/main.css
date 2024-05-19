@@ -31,13 +31,18 @@
 /** Pour couper le texte à l'aide de 3 petits points **/
 /** Ombres Portées **/
 /** décalage horizontal/décalage vertical/floutage/extension et couleur **/
-/** Keyframes LOADER **/
-/** taille des ronds **/
-@keyframes loader {
-  100% {
-    transform: scale(2);
+/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
+@keyframes menu {
+  from { /** échelle **/
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
+/** Keyframes LOADER **/
 /** apparence le temps de visibilité du loader **/
 @keyframes visibilité {
   90% {
@@ -47,15 +52,10 @@
     opacity: 0;
   }
 }
-/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
-@keyframes menu {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
+/** taille des ronds **/
+@keyframes loader {
+  100% {
+    transform: scale(2);
   }
 }
 /****** Paramètres généraux en Mobile First ***********/
@@ -109,10 +109,8 @@ a {
   /** Taille bouton page accueil **/
   /** Taille bouton pages restos **/
 }
-.cta:active, .cta:hover {
-  /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/
-}
 .cta:active::after, .cta:hover::after {
+  /** Activation du pseudo-élément "::after" + changement de l'ombre portée qui est plus intense **/
   opacity: 1;
   box-shadow: 0px 7px 7px 2px rgba(0, 0, 0, 0.2509803922);
 }
@@ -145,17 +143,17 @@ a {
 }
 
 /** Conteneur parent de référence pour le positionnement des coeurs, avec "position : relative;" **/
-.carre {
+.position {
   cursor: pointer;
   position: relative;
   /** Postionnement des coeurs page accueil/cards **/
   /** Coeur pages restaurants **/
 }
-.carre__heart {
+.position__heart {
   margin-top: 20px;
   margin-right: 45px;
 }
-.carre__myheart {
+.position__myheart {
   margin-top: 7px;
   margin-left: 20px;
 }
@@ -178,37 +176,21 @@ a {
   /** Ajout de la couleur voulue au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/
   background-color: #000000;
 }
-.far:active {
-  /** devient complètement invisible au clic... **/
+.far:active, .far:hover {
+  /** devient complètement invisible au clic ou au survol... **/
   opacity: 0;
 }
-@media screen and (min-width: 768px) {
-  .far {
-    /** ...ou au survol. **/
-  }
-  .far:hover {
-    opacity: 0;
-  }
-}
 
-/** Coeur plein **/
+/** coeur plein **/
 .fas {
   /** Ajout du dégradé voulu au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/
   background-image: linear-gradient(to bottom, #9356dc, #ff79da);
-  /** pour l'instant invisible... **/
+  /** d'abord invisible... **/
   opacity: 0;
 }
-.fas:active {
-  /** ...mais devient visible au clic, **/
+.fas:active, .fas:hover {
+  /** ...puis visible. **/
   opacity: 1;
-}
-@media screen and (min-width: 768px) {
-  .fas {
-    /** ...ou au survol. **/
-  }
-  .fas:hover {
-    opacity: 1;
-  }
 }
 
 /** CHECKBOX **/
@@ -307,17 +289,13 @@ input[type=checkbox]:checked ~ .fas {
   margin-right: 32px;
 }
 
-/** Alignement vertical du titre et des points superposés **/
-.middle {
+/** Aspect global **/
+.loader {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 80px;
-}
-
-/** Aspect global **/
-.loader {
   background-color: #353535;
   width: 100%;
   height: 100%;
@@ -326,7 +304,7 @@ input[type=checkbox]:checked ~ .fas {
   top: 0px;
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3000ms ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 3s ease-in-out both; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde l'ensemble des styles appliqués avant et après l'animation pour que le visuel reste bien homogène **/
   /** Style du titre **/
   /** Style des 3 ronds **/
 }
@@ -354,7 +332,7 @@ input[type=checkbox]:checked ~ .fas {
   /** Media Queries**/
   /** Rappel de la charte graphique du site sur chaque rond **/
   /******** Animation des 3 ronds ********/
-  /** Le premier rond violet (1) utilise la keyframe "loader" qui le fait grossir progressivement pour atteindre 200% de sa taille lorsqu'on est à 100% de l'animation, c'est à dire que l'action se déroule sur 600ms. Ce mouvement se fait de manière alterné avec "alternate", c'est à dire qu'il grossit puis diminue de taille avant de grossir à nouveau etc... Cela crée une sorte d'aller-retour du mouvement. L'animation commence lentement puis accélère pour à nouveau ralentir avec "ease-in-out", l'action est donc plus douce en début et en fin d'action et ceci est répété à l'infini avec "infinite". L'animation est donc constante et fluide pendant la durée de visibilité du loader **/
+  /** Le premier rond violet (1) utilise la keyframe "loader" qui le fait grossir progressivement pour atteindre 200% de sa taille lorsqu'on est à 100% de l'animation, c'est à dire que l'action se déroule sur 600ms. Ce mouvement se fait de manière alterné avec "alternate", c'est à dire qu'il grossit puis diminue de taille avant de grossir à nouveau etc... Cela crée une sorte d'aller-retour du mouvement. L'animation commence lentement puis accélère pour à nouveau ralentir avec "ease-in-out", l'action est donc plus douce en début et en fin d'action et ceci est répété (itération) à l'infini avec "infinite". L'animation est donc constante et fluide pendant la durée de visibilité du loader **/
   /** Même chose pour le rond rose (2) mais avec 200ms de décalage **/
   /** Même chose pour le rond vert (3) mais avec 400ms de décalage **/
 }
@@ -645,7 +623,7 @@ input[type=checkbox]:checked ~ .fas {
   flex-direction: column;
   padding-top: 32px;
   padding-left: 16px;
-  padding-right: 9.6px;
+  padding-right: 14px;
   margin-top: -48px;
   position: relative;
   background-color: #F6F6F6;
@@ -653,11 +631,11 @@ input[type=checkbox]:checked ~ .fas {
 }
 @media screen and (min-width: 768px) {
   .bckg__restos {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 13%;
+    margin-right: 13%;
     padding-top: 2.5%;
-    padding-left: 13%;
-    padding-right: 11%;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 }
 
@@ -669,7 +647,7 @@ input[type=checkbox]:checked ~ .fas {
 }
 @media screen and (min-width: 768px) {
   .align__title {
-    margin: auto;
+    justify-content: center;
     margin-bottom: 30px;
   }
 }
@@ -777,7 +755,7 @@ input[type=checkbox]:checked ~ .fas {
   border-bottom-right-radius: 16px;
   opacity: 0;
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: right center;
   transition: all 0.3s ease-in-out;
   /** Media Queries**/
   /** Paramètres de la coche **/

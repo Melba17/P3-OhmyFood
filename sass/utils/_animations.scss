@@ -1,10 +1,17 @@
-/** Keyframes LOADER **/
-/** taille des ronds **/
-@keyframes loader {
-    100% { 
-      transform: scale(2); 
-    }
+/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
+@keyframes menu {
+  from {      /** échelle **/
+    transform: scale(0);
+    opacity: 0;
   }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/** Keyframes LOADER **/
 /** apparence le temps de visibilité du loader **/ 
 @keyframes visibilité {
     90% {
@@ -15,15 +22,10 @@
     }
   }
 
-/** Keyframe Titre et Blocs Menu  passant d'invisibles à visibles - Page restos **/
-@keyframes menu {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
+  /** taille des ronds **/
+@keyframes loader {
+  100% { 
+    transform: scale(2); 
   }
 }
+

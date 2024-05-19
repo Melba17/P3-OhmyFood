@@ -1,10 +1,6 @@
-/** Alignement vertical du titre et des points superposés **/
-.middle {
-  @include loader;
-}
-
 /** Aspect global **/
 .loader {
+  @include loader;
   background-color: $darkgrey-color;
   width: 100%;
   height: 100%;
@@ -13,7 +9,7 @@
   top: 0px; 
   left: 0px;
   z-index: 10; /** positionné de manière invisible en surcouche **/
-  animation: visibilité 3000ms ease-in-out forwards; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde son apparence/état final en place (forwards) avant chaque itération, ce qui évite une action saccadée **/
+  animation: visibilité 3s ease-in-out both; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde l'ensemble des styles appliqués avant et après l'animation pour que le visuel reste bien homogène **/
 
         /** Style du titre **/
         &__title {
@@ -58,7 +54,7 @@
         }
 
         /******** Animation des 3 ronds ********/
-        /** Le premier rond violet (1) utilise la keyframe "loader" qui le fait grossir progressivement pour atteindre 200% de sa taille lorsqu'on est à 100% de l'animation, c'est à dire que l'action se déroule sur 600ms. Ce mouvement se fait de manière alterné avec "alternate", c'est à dire qu'il grossit puis diminue de taille avant de grossir à nouveau etc... Cela crée une sorte d'aller-retour du mouvement. L'animation commence lentement puis accélère pour à nouveau ralentir avec "ease-in-out", l'action est donc plus douce en début et en fin d'action et ceci est répété à l'infini avec "infinite". L'animation est donc constante et fluide pendant la durée de visibilité du loader **/
+        /** Le premier rond violet (1) utilise la keyframe "loader" qui le fait grossir progressivement pour atteindre 200% de sa taille lorsqu'on est à 100% de l'animation, c'est à dire que l'action se déroule sur 600ms. Ce mouvement se fait de manière alterné avec "alternate", c'est à dire qu'il grossit puis diminue de taille avant de grossir à nouveau etc... Cela crée une sorte d'aller-retour du mouvement. L'animation commence lentement puis accélère pour à nouveau ralentir avec "ease-in-out", l'action est donc plus douce en début et en fin d'action et ceci est répété (itération) à l'infini avec "infinite". L'animation est donc constante et fluide pendant la durée de visibilité du loader **/
         &:nth-child(1) {
           animation: loader .6s ease-in-out alternate infinite;
         }

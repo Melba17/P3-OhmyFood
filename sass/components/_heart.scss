@@ -4,7 +4,7 @@
 }
 
 /** Conteneur parent de référence pour le positionnement des coeurs, avec "position : relative;" **/ 
-.carre {
+.position {
     cursor: pointer;
     position: relative;
     
@@ -39,36 +39,26 @@
     /** Ajout de la couleur voulue au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/ 
     background-color: $black-color;
     
-    &:active {
-        /** devient complètement invisible au clic... **/
+    &:active,
+    &:hover {
+        /** devient complètement invisible au clic ou au survol... **/
         opacity: 0;
     }
-    @media screen and (min-width: 768px) {
-        /** ...ou au survol. **/
-        &:hover {
-            opacity: 0;
-        }
-      }
 }
 
-/** Coeur plein **/
+/** coeur plein **/
 .fas { 
     /** Ajout du dégradé voulu au caractère coeur après avoir rendu invisible le caractère d'origine dans la classe ".fa__base" **/ 
     background-image: linear-gradient(to bottom, $purple-color, $pink-color);
-    /** pour l'instant invisible... **/
+    /** d'abord invisible... **/
     opacity: 0;
     
-
-    &:active {
-        /** ...mais devient visible au clic, **/
+    &:active,
+    &:hover {
+        /** ...puis visible. **/
         opacity: 1;
     }
-    @media screen and (min-width: 768px) {
-        /** ...ou au survol. **/
-        &:hover {
-            opacity: 1;
-        }
-      }
+    
 }
 
 /** CHECKBOX **/

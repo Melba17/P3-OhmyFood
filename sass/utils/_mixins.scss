@@ -94,19 +94,18 @@
 }
 
 /** Vignettes pages restaurants**/
-
 @mixin restos {
     padding-top: 32px;
     padding-left: 16px;
-    padding-right: 9.6px;
+    padding-right: 14px;
     margin-top: -48px;
 
     @media screen and (min-width: 768px) {
-      margin-left: 15%;
-      margin-right: 15%;
+      margin-left: 13%;
+      margin-right: 13%;
       padding-top: 2.5%;
-      padding-left: 13%;
-      padding-right: 11%;
+      padding-left: 15%;
+      padding-right: 15%;
     }
 }
 /** Pour couper le texte à l'aide de 3 petits points **/

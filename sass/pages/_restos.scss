@@ -27,7 +27,7 @@
 
  /** Media Queries**/
   @media screen and (min-width: 768px) {
-    margin: auto;
+    justify-content: center;
     margin-bottom: 30px;
   }
 }
@@ -126,7 +126,7 @@
         border-bottom-right-radius: 16px;
         opacity: 0;
         transform: scaleX(0);
-        transform-origin: right;
+        transform-origin: right center;
         transition: all .3s ease-in-out;
       
         /** Media Queries**/
