@@ -188,9 +188,14 @@ a {
   /** d'abord invisible... **/
   opacity: 0;
 }
-.fas:active, .fas:hover {
+.fas:active {
   /** ...puis visible. **/
   opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .fas:hover {
+    opacity: 1;
+  }
 }
 
 /** CHECKBOX **/

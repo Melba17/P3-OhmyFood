@@ -53,11 +53,16 @@
     /** d'abord invisible... **/
     opacity: 0;
     
-    &:active,
-    &:hover {
+    &:active {
         /** ...puis visible. **/
         opacity: 1;
     }
+
+        @media screen and (min-width: 768px) {
+            &:hover {
+                opacity: 1;
+            }
+        }
     
 }
 
