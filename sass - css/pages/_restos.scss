@@ -64,7 +64,7 @@
   animation: menu 1.5s 450ms both; 
 }
 
-/** Paramètres Vignettes plats **/
+/***** Paramètres Vignettes plats ******/
 .vignette {
       position: relative;
       @include symbol;
@@ -80,8 +80,54 @@
         margin-bottom: 12px;
       }
 
+      /** Paramètres de languette verte **/
+      .vignette__bar {
+        @include flexcenter;
+        background-color: $green-color;
+        width: 19%;
+        margin-left: -50px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: right center;
+        transition: all .3s ease-in-out;
+      
+        /** Media Queries**/
+        @media screen and (min-width: 768px) {
+         width: 13%;
+         margin-left: -35px;
+        }
+      
+         /** Paramètres de la coche **/
+         &__check {
+          @include flexcenter;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          background-color: $white-color;
+        }
+      
+        /** couleur de la coche **/
+        i {
+          color: $green-color;
+        }
+      }
+
+       /** Paramètres du prix affiché **/
+       &__price {
+        position: absolute;
+        font-size: 0.94rem;
+        font-weight: 700;
+        color: $darkgrey-color;
+        margin-top: 35px;
+        right: 15px;
+        transition: transform .3s ease-in-out;
+      }
+
       /** On coupe le texte à l'aide de 3 petits points lorsque c'est nécessaire **/
-       &__points {
+      &__points {
         @include points;
         width: 82%;
         transition: all .3s ease-in-out;
@@ -108,53 +154,6 @@
           padding-left: 15px;
           padding-bottom: 10px;
           letter-spacing: -0.4px;    
-        }
-      }
-
-      /** Paramètres du prix affiché **/
-      &__price {
-        position: absolute;
-        font-size: 0.94rem;
-        font-weight: 700;
-        color: $darkgrey-color;
-        margin-top: 35px;
-        right: 15px;
-        transition: transform .3s ease-in-out;
-      }
-
-      /** Paramètres de languette verte **/
-      .vignette__bar {
-        @include flexcenter;
-        background-color: $green-color;
-        width: 19%;
-        margin-left: -50px;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-        opacity: 0;
-        transform: scaleX(0);
-        transform-origin: right center;
-        transition: all .3s ease-in-out;
-      
-        /** Media Queries**/
-        @media screen and (min-width: 768px) {
-         width: 13%;
-         margin-left: -35px;
-        }
-        
-      
-         /** Paramètres de la coche **/
-         &__check {
-          @include flexcenter;
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          border-radius: 10px;
-          background-color: $white-color;
-        }
-      
-        /** couleur de la coche **/
-        i {
-          color: $green-color;
         }
       }
 
