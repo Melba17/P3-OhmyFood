@@ -166,23 +166,21 @@
         }
         & > .vignette__price {
             transform: translateX(-17vw);
+            
+            @media screen and (min-width: 768px) {
+                  transform: translateX(-5.5vw);
+            }
         }
         & > .vignette__points {
           width: 190px;
-        }
+
+            @media screen and (min-width: 768px) {
+              width: 220px;
+            }
+          }
       }   
       
       /** Media Queries - Même chose au survol**/
-      @media screen and (min-width: 768px) {
-        &:active {
-          & > .vignette__price {
-              transform: translateX(-5.5vw);
-          }
-          & > .vignette__points {
-            width: 220px;
-          }
-        }   
-      }
       @media screen and (min-width: 1024px) {
         &:hover {
           /** remise de transform: scaleX et translateX car sinon ils ne fonctionneront qu'avec :active **/

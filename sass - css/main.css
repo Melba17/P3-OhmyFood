@@ -798,13 +798,15 @@ input[type=checkbox]:checked ~ .fas {
 .vignette:active > .vignette__price {
   transform: translateX(-17vw);
 }
-.vignette:active > .vignette__points {
-  width: 190px;
-}
 @media screen and (min-width: 768px) {
   .vignette:active > .vignette__price {
     transform: translateX(-5.5vw);
   }
+}
+.vignette:active > .vignette__points {
+  width: 190px;
+}
+@media screen and (min-width: 768px) {
   .vignette:active > .vignette__points {
     width: 220px;
   }
