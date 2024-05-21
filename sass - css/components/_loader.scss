@@ -11,20 +11,19 @@
   z-index: 10; /** positionné de manière invisible en surcouche **/
   animation: visibilité 3s ease-in-out both; /** visible pendant 3 secondes, de manière fluide et naturelle grâce à "ease-in-out" et garde l'ensemble des styles appliqués avant et après l'animation pour que le visuel reste bien homogène **/
 
-        /** Style du titre **/
-        &__title {
-          position: relative;
-          font-family: $title-font;
-          color: $white-color;
-          font-size: 2rem;
-          margin-top: -100px;
+      /** Style du titre **/
+      &__title {
+        font-family: $title-font;
+        color: $white-color;
+        font-size: 2rem;
+        margin-top: -100px;
 
         /** Media Queries **/
-          @media screen and (min-width: 768px) {
-            font-size: 2.3rem;
-            margin-top: -140px;
+        @media screen and (min-width: 768px) {
+          font-size: 2.3rem;
+          margin-top: -140px;
           }
-        }
+      }
   
       /** Style des 3 ronds **/
       &__element {

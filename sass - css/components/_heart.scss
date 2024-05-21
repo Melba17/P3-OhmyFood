@@ -23,7 +23,7 @@
 
 /** Paramètres généraux des coeurs **/
 .fa__base {
-/** Positionnement spécifique des coeurs en fonction de leur conteneur parent ".carre" **/
+/** Positionnement spécifique des coeurs en fonction de leur conteneur parent ".position" **/
     position: absolute;
     font-size: 23px;
     /** on rend l'icône et sa couleur d'origine invisibles **/
@@ -68,7 +68,7 @@
 
 /** CHECKBOX **/
 .checkbox {
-    /** positionnement de la checkbox au même endroit que les coeurs, en fonction du conteneur parent ".carre", mais celle-ci est invisible **/
+    /** positionnement de la checkbox au même endroit que les coeurs, en fonction du conteneur parent ".position", mais celle-ci est invisible **/
             position: absolute;
             opacity: 0;
         }
