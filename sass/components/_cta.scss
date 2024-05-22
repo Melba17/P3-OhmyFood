@@ -23,13 +23,13 @@
         content: "";
         border-radius: 30px;
         position: absolute;
+        z-index: -1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         background: $light-gradient;
         opacity: 0;
-        z-index: -1;
         /** "all" pour prendre en compte l'opacité et la mixin concernant l'ombre portée lors de l'activation des pseudo-classes :active et :hover situées au-dessus. Cette animation dure 300ms. Le cubic-bezier vient personnaliser 
         la vitesse en début (x1 y1) et fin d'animation (x2 y2, sur une courbe de graphique). **/ 
         transition: all 0.3s cubic-bezier(.4,.1,.6,.9);
